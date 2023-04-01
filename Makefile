@@ -1,0 +1,36 @@
+NAME = Push_swap
+
+
+LIBFT_DIR = libft
+LIBFT =  $(LIBFT_DIR)/libft.a
+
+FT_PRINTF_DIR = ft_printf
+FT_PRINTF =  $(FT_PRINTF_DIR)/ft_printf.a
+
+CC = cc
+Cflags = -Wall -Werror -Wextra
+SRC_PS = main.c
+OBJS_C = ${SRC_PS:.c=.o}
+
+all: $(NAME)
+
+$(NAME):  $(OBJS_C)  $(LIBFT) $(FT_PRINTF)
+	@$(CC) $(Cflags) $(OBJS_C) $(LIBFT) $(FT_PRINTF) -o $(NAME)
+
+ $(LIBFT):
+	 @make -C $(LIBFT_DIR) all
+
+ $(FT_PRINTF):
+	 @make -C $(FT_PRINTF_DIR) all
+
+clean :
+	rm -rf  $(OBJS_C)
+	@make -C  $(LIBFT_DIR)  clean
+	@make -C  $(FT_PRINTF_DIR)  clean
+
+fclean : clean
+	rm -rf $(NAME)
+	@make -C $(LIBFT_DIR) fclean
+	@make -C $(FT_PRINTF_DIR) fclean
+
+re: fclean all
