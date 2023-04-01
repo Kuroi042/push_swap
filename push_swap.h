@@ -11,14 +11,7 @@
 typedef struct s_checker
 {
     int incre;
-    int *args;
-    
-
-
-
-
-
-
+   char *args;
     
 }t_data_checker;
 
