@@ -8,14 +8,14 @@ FT_PRINTF_DIR = ft_printf
 FT_PRINTF =  $(FT_PRINTF_DIR)/ft_printf.a
 
 CC = cc
-Cflags = -Wall -Werror -Wextra
+
 SRC_PS = main.c
 OBJS_C = ${SRC_PS:.c=.o}
 
 all: $(NAME)
 
-$(NAME):  $(OBJS_C)  $(LIBFT) $(FT_PRINTF)
-	@$(CC) $(Cflags) $(OBJS_C) $(LIBFT) $(FT_PRINTF) -o $(NAME)
+$(NAME):  $(OBJS_C)  $(LIBFT) 
+	@$(CC)  $(OBJS_C) $(LIBFT) -o $(NAME)
 
  $(LIBFT):
 	 @make -C $(LIBFT_DIR) all

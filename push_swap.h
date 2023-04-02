@@ -6,15 +6,18 @@
 #include <fcntl.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdio.h>
 
 
 typedef struct s_checker
 {
     int incre;
    char *args;
-} t_data_checker;
 
-int ft_atoi_swap(char **str);
+} t_checker;
+
+// int ft_atoi_swap(char *str);
+int ft_strlen_push(char **str);
 
 
 #endif
