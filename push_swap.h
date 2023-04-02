@@ -12,9 +12,9 @@ typedef struct s_checker
 {
     int incre;
    char *args;
-    
-}t_data_checker;
+} t_data_checker;
 
+int ft_atoi_swap(char **str);
 
 
 #endif
