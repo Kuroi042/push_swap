@@ -40,10 +40,8 @@ int ft_strlen_push(char **str){
 	return i;
 }
 void check_range_int(int result){
-
    if ( result < INT_MIN || ( result > INT_MAX)){
 	printf("number out of the range\n");
 	exit(1);
    }
-
 }

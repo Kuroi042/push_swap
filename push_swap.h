@@ -10,16 +10,17 @@
 #include <limits.h>
 
 
-typedef struct s_checker
-{
-    int incre;
-   char *args;
+// typedef struct t_instruction
+// {
 
-} t_checker;
+
+// } t_instr;
+
 
 long ft_atoi_push(char *str);
 int ft_strlen_push(char **str);
 void check_range_int(int result);
+void swap_a(int *arr, int size);
 
 
 #endif
