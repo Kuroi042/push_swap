@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
+#include <limits.h>
 
 
 typedef struct s_checker
@@ -16,8 +17,9 @@ typedef struct s_checker
 
 } t_checker;
 
-// int ft_atoi_swap(char *str);
+long ft_atoi_push(char *str);
 int ft_strlen_push(char **str);
+void check_range_int(int result);
 
 
 #endif
