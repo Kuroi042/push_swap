@@ -7,26 +7,55 @@ int main(int argc , char *argv[]){
 		if(argc ==2)
 
 	  argv =  ft_split(*argv, ' ');
-	 int len = ft_strlen_push(argv);
-	  int  *stack_a = malloc(len* sizeof(int));
+	t_mystack *mystack;
+	mystack = (t_mystack*)malloc(sizeof(t_mystack));
+	 mystack->len = ft_strlen_push(argv);
+	 mystack->stack_a = malloc(mystack->len* sizeof(int));
 	  int i = 0;
 
-		  while(i < len){
-			stack_a[i] = ft_atoi_push(argv[i]);
-		check_range_int(stack_a[i]);
+		  while(i < mystack->len){
+			mystack->stack_a[i] = ft_atoi_push(argv[i]);
+		check_range_int(mystack->stack_a[i]);
 			i++;
 	  }
-	  i = 0;
+	  mystack->stack_b = malloc(mystack->len*sizeof(int));
 
-	  int *stack_b = ft_calloc(len,sizeof(int));
-	   swap_a(stack_a,  len);
-// 	   while(i < len){
-//     			printf("sortie == %d\n",stack_a[i]);
-//                 i++;
-// }
+	//    mystack->stack_b[0] = 1;
+	//    	   mystack->stack_b[1] = 2;
+	// 	   	   mystack->stack_b[2] = 3;
+	// 		   	   mystack->stack_b[3] = 4;
+	  mystack->len_a = mystack->len;
+	mystack->len_b = 0;
+	// swap_a(mystack);
+push_b(mystack);
+push_b(mystack);
+push_b(mystack);
+
+		// swap_a(mystack);
+		i = 0;
+				while(i < mystack->len_b){
+			printf("stack_b[%d] == %d\n",i, mystack->stack_b[i]);
+			i++;
+		}
+		printf("len %d", mystack->len_b);
+		printf("XXXXXXXXXXXX\n");
+	//   i = 0;
+	// 	while(i < mystack->len_a){
+	// 		printf("stack_a[%d] == %d\n", i, mystack->stack_a[i]);
+	// 		i++;
+	// 	}
+
+
+
+
+
 	}
 	return 0;
 
 }
+
+	//    while(i < mystack->len){
+
+
 
  
