@@ -17,8 +17,8 @@ typedef struct  s_mystrcut
  int *stack_b;
  int len_a;
  int len_b;
-int index_a
-int index_b
+int index_a;
+int index_b;
  int i;
 
 } t_mystack;
@@ -32,6 +32,14 @@ void swap_b(t_mystack *mystack);
 void swap_ab(t_mystack *mystack);
 void push_a(t_mystack *mystack);
 void push_b(t_mystack *mystack);
+void rotate_a(t_mystack *mystack);
+void rotate_b(t_mystack *mystack);
+void rotate_ab(t_mystack *mystack);
+void r_rotate_a(t_mystack *mystack);
+void r_rotate_b(t_mystack *mystack);
+void sort_three(t_mystack *mysatck);
+
+
 
 
 

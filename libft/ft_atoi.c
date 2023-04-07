@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 02:05:52 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/03/30 19:23:55 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/07 08:41:46 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdio.h>
 
 int	ft_atoi(char *str)
-{
+{	
 	size_t	i;
 	int		sign;
 	int		nbr;
@@ -33,8 +33,6 @@ int	ft_atoi(char *str)
 	else if (str[i] == '+')
 		i++;
 			else{
-		// printf("error\n");
-		// 	exit(1);
 			}
 		
 	while (str[i] >= '0' && str[i] <= '9')
