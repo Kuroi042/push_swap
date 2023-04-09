@@ -10,7 +10,7 @@
 #include <limits.h>
 
 
-typedef struct  s_mystrcut
+typedef struct  s_mystack
 {
  int len;
  int *stack_a;
@@ -38,9 +38,7 @@ void rotate_ab(t_mystack *mystack);
 void r_rotate_a(t_mystack *mystack);
 void r_rotate_b(t_mystack *mystack);
 void sort_three(t_mystack *mysatck);
-
-
-
-
-
+void sort_cinq(t_mystack *mystack);
+void simplesorting(t_mystack *mystack);
+void simplesorting(t_mystack *mystack);
 #endif

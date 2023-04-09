@@ -20,10 +20,14 @@ int main(int argc , char *argv[]){
 	  }
 	  mystack->len_a = mystack->len;
 	  mystack->stack_b = malloc(mystack->len*sizeof(int));
-	  if(mystack->len == 3){
+	//   rotate_a(mystack);
+	//   rotate_a(mystack);
 
-			sort_three(mystack);
-	  }
+	//   if(mystack->len == 3){
+	// 		sort_three(mystack);
+	//   }
+	  if(mystack->len == 5)
+	  	sort_cinq(mystack);
 
 		i = 0;
 				while(i < mystack->len_b){

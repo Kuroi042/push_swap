@@ -10,12 +10,10 @@ else if(mystack->len >1 ){
     temp = mystack->stack_a[0];
     mystack->stack_a[0] = mystack->stack_a[1];
     mystack->stack_a[1] = temp;
-      
+    
 printf("sa\n");
+  }
 }
-
-	}
-
 void swap_b(t_mystack *mystack){
 
 int i = 0;
