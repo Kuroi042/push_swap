@@ -9,7 +9,7 @@ FT_PRINTF =  $(FT_PRINTF_DIR)/ft_printf.a
 
 CC = cc
 
-SRC_PS = main.c push_swap_errors.c instructions_S.c sorting.c
+SRC_PS = main.c push_swap_errors.c instructions_S.c sorting.c range.c
 OBJS_C = ${SRC_PS:.c=.o}
 
 all: $(NAME)

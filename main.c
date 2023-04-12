@@ -20,23 +20,24 @@ int main(int argc , char *argv[]){
 	  }
 	  mystack->len_a = mystack->len;
 	  mystack->stack_b = malloc(mystack->len*sizeof(int));
-	//   rotate_a(mystack);
-	//   rotate_a(mystack);
 
 	//   if(mystack->len == 3){
 	// 		sort_three(mystack);
 	//   }
-	  if(mystack->len == 5)
-	  	sort_cinq(mystack);
-
-		i = 0;
-				while(i < mystack->len_b){
-			printf("               stack_b[%d] == %d\n",i, mystack->stack_b[i]);
-			i++;
-		}
+	//  else  if(mystack->len == 5)
+	//   	sort_cinq(mystack);
+		//    if(mystack->len > 5){
+			sorting_cent(mystack);
+	// }
+	// 	i = 0;
+	// 			while(i < mystack->len_b){
+	// 		printf("               stack_b[%d] == %d\n",i, mystack->stack_b[i]);
+	// 		i++;
+	// 	}
+	printf("\n");
 	  i = 0;
 		while(i < mystack->len_a){
-			printf("stack_a[%d] == %d\n", i, mystack->stack_a[i]);
+			printf("|main.c stack_a[%d] == %d|      |temp_stack[%d] == %d|\n", i, mystack->stack_a[i] , i, mystack->temparr[i] );
 			i++;
 		}
 	}

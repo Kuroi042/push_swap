@@ -11,30 +11,29 @@ void sort_three(t_mystack *mystack){
 	if (mystack->stack_a[0] > mystack->stack_a[1] && mystack->stack_a[0] < mystack->stack_a[2]
 		&& mystack->stack_a[1] < mystack->stack_a[2])
 		swap_a(mystack);
-	if (mystack->stack_a[0] > mystack->stack_a[1] && mystack->stack_a[0] > mystack->stack_a[2]
+else if (mystack->stack_a[0] > mystack->stack_a[1] && mystack->stack_a[0] > mystack->stack_a[2]
 		&& mystack->stack_a[1] > mystack->stack_a[2])
 	{
 		swap_a(mystack );
 		r_rotate_a(mystack );
 	}
-	if (mystack->stack_a[0] > mystack->stack_a[1] && mystack->stack_a[0] > mystack->stack_a[2]
+else if(mystack->stack_a[0] > mystack->stack_a[1] && mystack->stack_a[0] > mystack->stack_a[2]
 		&& mystack->stack_a[1] < mystack->stack_a[2])
 		rotate_a(mystack);
-	if (mystack->stack_a[0] < mystack->stack_a[1] && mystack->stack_a[0] < mystack->stack_a[2]
+else if (mystack->stack_a[0] < mystack->stack_a[1] && mystack->stack_a[0] < mystack->stack_a[2]
 		&& mystack->stack_a[1] > mystack->stack_a[2])
 	{
 		swap_a(mystack);
 		rotate_a(mystack);
 	}
-	if (mystack->stack_a[0] < mystack->stack_a[1] && mystack->stack_a[0] > mystack->stack_a[2]
+else if (mystack->stack_a[0] < mystack->stack_a[1] && mystack->stack_a[0] > mystack->stack_a[2]
 		&& mystack->stack_a[1] > mystack->stack_a[2])
 		r_rotate_a(mystack);
 
 }
 
 void sort_cinq(t_mystack *mystack){
- 
- 	simplesorting(mystack);
+ 	simplesorting(mystack , mystack->stack_a);
 	push_b(mystack);
 	push_b(mystack);
 	sort_three(mystack);
@@ -42,16 +41,18 @@ void sort_cinq(t_mystack *mystack){
 	push_a(mystack);
 }
 
-void simplesorting(t_mystack *mystack) {
-    int i, j, temp;
+void simplesorting(t_mystack *mystack ,  int  *arr) {
+     int		 i;
+	 int 		 j;
+	 int  temp = 0;
 	i = 0;
     while( i < mystack->len - 1 ) {
 	j = 0;
         while( j < mystack->len - i - 1) {
-            if(mystack->stack_a[j] > mystack->stack_a[j+1]) {
-                temp = mystack->stack_a[j];
-                mystack->stack_a[j] = mystack->stack_a[j+1];
-                mystack->stack_a[j+1] = temp;
+            if(arr[j] > arr[j+1]){
+                temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
             }
 			 j++;
         }

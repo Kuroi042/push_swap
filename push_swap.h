@@ -15,10 +15,10 @@ typedef struct  s_mystack
  int len;
  int *stack_a;
  int *stack_b;
+ int *temparr;
+ int *indexer;
  int len_a;
  int len_b;
-int index_a;
-int index_b;
  int i;
 
 } t_mystack;
@@ -39,6 +39,9 @@ void r_rotate_a(t_mystack *mystack);
 void r_rotate_b(t_mystack *mystack);
 void sort_three(t_mystack *mysatck);
 void sort_cinq(t_mystack *mystack);
-void simplesorting(t_mystack *mystack);
-void simplesorting(t_mystack *mystack);
+void simplesorting(t_mystack *mystack, int *arr);
+void sorting_cent(t_mystack *mystack);
+void finder(t_mystack *mystack);
+void range(t_mystack *mystack);
+
 #endif
