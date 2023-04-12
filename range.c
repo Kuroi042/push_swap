@@ -29,7 +29,7 @@ void finder(t_mystack *mystack)
         {
             if (mystack->stack_a[i] == mystack->temparr[j])
             {
-                mystack->indexer[i] = j;
+                mystack->stack_a[i] = j;
                 j = mystack->len;
             }
             j++;
@@ -46,15 +46,17 @@ void range(t_mystack *mystack)
     if (mystack->len > 100)
         range = 35;
 
-        while(mystack->len_a){
-    if (mystack->temparr[0] < i+ range)
+        while(mystack->len_a ){
+      
+    if (mystack->stack_a[0] <= i )
     {
         push_b(mystack);
         rotate_b(mystack);
         i++;
     }
-    else if (mystack->temparr[0] <= range + i)
+    else if (mystack->stack_a[0] <= range + i)
     {
+        printf("\nnnnn");
         push_b(mystack);
         i++;
     }
