@@ -46,9 +46,8 @@ void range(t_mystack *mystack)
     if (mystack->len > 100)
         range = 35;
 
-        while(mystack->len_a ){
-      
-    if (mystack->stack_a[0] <= i )
+        while(mystack->len_a){
+    if (mystack->stack_a[0] < i )
     {
         push_b(mystack);
         rotate_b(mystack);
@@ -56,7 +55,6 @@ void range(t_mystack *mystack)
     }
     else if (mystack->stack_a[0] <= range + i)
     {
-        printf("\nnnnn");
         push_b(mystack);
         i++;
     }
