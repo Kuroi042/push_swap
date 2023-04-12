@@ -23,7 +23,7 @@ typedef struct  s_mystack
 
 } t_mystack;
 
-   
+
 long ft_atoi_push(char *str);
 int ft_strlen_push(char **str);
 void check_range_int(int result);

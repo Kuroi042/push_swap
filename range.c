@@ -6,8 +6,13 @@ void sorting_cent(t_mystack *mystack)
     mystack->temparr = ft_calloc(sizeof(int), mystack->len);
     ft_memcpy(mystack->temparr, mystack->stack_a, sizeof(int) * mystack->len);
     simplesorting(mystack, mystack->temparr);
-    finder(mystack);
-    range(mystack);
+    // finder(mystack);
+    //     int j = 0;
+    // while(j < mystack->len_a){
+    //     printf("temp -- %d\n",mystack->temparr[j]);
+    //     j++;
+    // }
+     range(mystack);
 }
 
 void finder(t_mystack *mystack)
@@ -32,23 +37,28 @@ void finder(t_mystack *mystack)
         i++;
     }
 }
+
 void range(t_mystack *mystack)
 {
-    int i = 0;
+    int top = 0;
     int range = 15;
+    int i = 0;
     if (mystack->len > 100)
         range = 35;
-    if (mystack->indexer[i] <= range)
+
+        while(mystack->len_a){
+    if (mystack->temparr[0] < i+ range)
     {
         push_b(mystack);
         rotate_b(mystack);
         i++;
     }
-    else if (mystack->indexer[i] < i + range)
+    else if (mystack->temparr[0] <= range + i)
     {
         push_b(mystack);
         i++;
     }
     else
         rotate_a(mystack);
+    }
 }
