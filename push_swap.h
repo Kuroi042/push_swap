@@ -40,8 +40,8 @@ void r_rotate_b(t_mystack *mystack);
 void sort_three(t_mystack *mysatck);
 void sort_cinq(t_mystack *mystack);
 void simplesorting(t_mystack *mystack, int *arr);
-void sorting_cent(t_mystack *mystack);
-void finder(t_mystack *mystack);
-void range(t_mystack *mystack);
+void sorting_100(t_mystack *mystack);
+int *finder(t_mystack *mystack);
+void range(t_mystack *mystack, int *s);
 
 #endif

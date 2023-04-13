@@ -28,19 +28,19 @@ int main(int argc , char *argv[]){
 	  	sort_cinq(mystack);
 	}
 		  else  if(mystack->len > 5){
-			sorting_cent( mystack);
-		  }
-		// i = 0;
+			sorting_100( mystack);
+	// printf("\n");
+	  i = 0;
+		// while(i < mystack->len_a){
+		// 	printf("|main.c stack_a[%d] == %d\n",i,  mystack->stack_a[i] );
+		// 	i++;
+		// }
+		// //   }
+		// // i = 0;
 		// 		while(i < mystack->len_b){
 		// 	printf("               stack_b[%d] == %d\n",i, mystack->stack_b[i]);
 		// 	i++;
-		// }
-	// printf("\n");
-	//   i = 0;
-	// 	while(i < mystack->len_a){
-	// 		printf("|main.c stack_a[%d] == %d|      |temp_stack[%d] == %d|\n", i, mystack->stack_a[i] , i, mystack->temparr[i] );
-	// 		i++;
-	// 	}
+		}
 	}
 	return 0;
 
