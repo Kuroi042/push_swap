@@ -33,6 +33,7 @@ swap_b(mystack);
 printf("ss\n");
 }
 
+//push to_STACK _A
 void push_a(t_mystack *mystack){
 if(mystack->stack_b){
 mystack->len_a++;

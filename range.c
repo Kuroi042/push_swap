@@ -9,16 +9,16 @@ void sorting_100(t_mystack *mystack)
     simplesorting(mystack, mystack->temparr);
     s = finder(mystack);
     range(mystack, s);
+    return_b(mystack);
 }
-
 
 int *finder(t_mystack *mystack)
 {
     int i = 0; // stack_a
-    int j = 0; //temp_stack
+    int j = 0; // temp_stack
     int t = 0;
-    int *s;
-    s = malloc(sizeof(int) * mystack->len);
+    int *index;
+    index = malloc(sizeof(int) * mystack->len);
     while (i < mystack->len)
     {
         j = 0;
@@ -26,7 +26,7 @@ int *finder(t_mystack *mystack)
         {
             if (mystack->stack_a[i] == mystack->temparr[j])
             {
-                s[t] = j;
+                index[t] = j;
                 t++;
                 j = mystack->len;
             }
@@ -34,7 +34,7 @@ int *finder(t_mystack *mystack)
         }
         i++;
     }
-    return(s);
+    return (index);
 }
 
 void range(t_mystack *mystack, int *s)
@@ -43,20 +43,80 @@ void range(t_mystack *mystack, int *s)
     int i = 0;
     if (mystack->len > 100)
         range = 35;
-        while(mystack->len_a){
-    s = finder(mystack);
-    if (s[0] < i )
+    while (mystack->len_a)
     {
-        push_b(mystack);
-        rotate_b(mystack);
+        s = finder(mystack);
+        if (s[0] <= i)
+        {
+            push_b(mystack);
+            rotate_b(mystack);
+            i++;
+        }
+        else if (s[0] <= range + i)
+        {
+            push_b(mystack);
+            i++;
+        }
+        else
+            rotate_a(mystack);
+    }
+}
+
+int *finder2(t_mystack *mystack)
+{
+    int i = 0; // stack_a
+    int j = 0; // temp_stack
+    int t = 0;
+    int *s;
+    s = malloc(sizeof(int) * mystack->len_b);
+    while (i < mystack->len_b)
+    {
+        j = 0;
+        while (j < mystack->len_b)
+        {
+            if (mystack->stack_b[i] == mystack->temparr[j])
+            {
+                s[t] = j;
+                t++;
+                j = mystack->len_b;
+            }
+            j++;
+        }
         i++;
     }
-    else if (s[0] <= range + i)
+    return (s);
+}
+ 
+
+int big_index(t_mystack *mystack)
+{
+    int biggest_num;
+    int i; 
+    int j; 
+    j = 0;
+    i = 0;
+    biggest_num = mystack->stack_b[0];
+    while(i < mystack->len_b) 
     {
-        push_b(mystack);
+        if (mystack->stack_b[i] > biggest_num)
+        {
+            j = i;
+            biggest_num = mystack->stack_b[i];
+        }
         i++;
     }
-    else
-        rotate_a(mystack);
-    }
+    return(j);
+}
+
+void return_b(t_mystack *mystack){
+int i = 0;
+while(mystack->len_b){
+
+if(big_index(mystack) == 0)
+    push_a(mystack);
+else if(big_index(mystack)  <= (mystack->len_b / 2))
+    rotate_b(mystack);
+else if(big_index(mystack)  >= (mystack->len_b / 2))
+r_rotate_b(mystack);
+}
 }

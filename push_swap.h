@@ -16,7 +16,6 @@ typedef struct  s_mystack
  int *stack_a;
  int *stack_b;
  int *temparr;
- int *indexer;
  int len_a;
  int len_b;
  int i;
@@ -43,5 +42,7 @@ void simplesorting(t_mystack *mystack, int *arr);
 void sorting_100(t_mystack *mystack);
 int *finder(t_mystack *mystack);
 void range(t_mystack *mystack, int *s);
-
+int big_index(t_mystack *mystack);
+int *finder2(t_mystack *mystack);
+void return_b(t_mystack *mystack);
 #endif
