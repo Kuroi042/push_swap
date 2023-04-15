@@ -9,6 +9,13 @@
 #include <stdio.h>
 #include <limits.h>
 
+typedef struct s_mytools
+{
+    char **str;
+    int len;
+    int *numbers;
+
+}t_mytools;
 
 typedef struct  s_mystack
 {
@@ -23,9 +30,12 @@ typedef struct  s_mystack
 } t_mystack;
 
 
+void args_parser(char **argv, t_mytools *mytools);
+void counter(t_mytools *mytools);
+
+void check_dip(t_mystack *mystack);
 long ft_atoi_push(char *str);
-int ft_strlen_push(char **str);
-void check_range_int(int result);
+void check_range_int(t_mystack *mystack);
 void swap_a(t_mystack *mystack);
 void swap_b(t_mystack *mystack);
 void swap_ab(t_mystack *mystack);
