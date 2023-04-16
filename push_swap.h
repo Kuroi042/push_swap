@@ -31,11 +31,13 @@ typedef struct  s_mystack
 
 void args_parser(char **argv, t_mytools *mytools);
 void counter(t_mytools *mytools);
- //void checkstr(t_mytools *mytools);
+void checkstr(t_mytools *mytools);
 
-//void check_dip(t_mystack *mystack);
-// void earlycheck(t_mytools *mytools);
-//void check_range_int(t_mystack *mystack);
+ void check_dip(t_mystack *mystack);
+//void checkempty(t_mytools *mytools);
+int	ft_isnumber(int c);
+void check_range_int(t_mystack *mystack);
+int is_sorted(t_mystack *mystack);
 void swap_a(t_mystack *mystack);
 void swap_b(t_mystack *mystack);
 void swap_ab(t_mystack *mystack);

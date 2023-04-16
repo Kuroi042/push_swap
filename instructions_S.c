@@ -4,8 +4,8 @@ void swap_a(t_mystack *mystack){
 
 int i = 0;
 
-if( mystack->len == 0 || mystack->len == 1){}
-else if(mystack->len >1 ){
+if( mystack->len_a == 0 || mystack->len_a == 1){}
+else if(mystack->len_a >1 ){
     int temp = 0;
     temp = mystack->stack_a[0];
     mystack->stack_a[0] = mystack->stack_a[1];
@@ -18,8 +18,8 @@ void swap_b(t_mystack *mystack){
 
 int i = 0;
 
-if( mystack->len == 0 || mystack->len == 1){}
-else if(mystack->len >1 ){
+if( mystack->len_b == 0 || mystack->len_b == 1){}
+else if(mystack->len_b >1 ){
     int temp = 0;
     temp = mystack->stack_b[0];
     mystack->stack_b[0] = mystack->stack_b[1];

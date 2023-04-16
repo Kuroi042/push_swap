@@ -9,6 +9,12 @@ void sorting_100(t_mystack *mystack)
     simplesorting(mystack, mystack->temparr);
     s = finder(mystack);
     range(mystack, s);
+    int j = 0;
+    while(j < mystack->len_a)
+    {
+        printf("---->%d\n", s[j]);
+        j++;
+    }
     return_b(mystack);
 }
 
@@ -41,11 +47,13 @@ void range(t_mystack *mystack, int *s)
 {
     int range = 15;
     int i = 0;
-    if (mystack->len > 100)
+    if (mystack->len_a > 100)
         range = 35;
     while (mystack->len_a)
     {
+        // printf("s[0]-->%d\n", s[0]);
         s = finder(mystack);
+        // printf("i = %d  i + range = %d\n", i, i + range);
         if (s[0] <= i)
         {
             push_b(mystack);
@@ -59,6 +67,7 @@ void range(t_mystack *mystack, int *s)
         }
         else
             rotate_a(mystack);
+        // s = finder(mystack);
     }
 }
 

@@ -31,24 +31,34 @@ int main(int argc, char *argv[])
 
 		args_parser(argv, mytools);
 		 counter(mytools);
+		  	
+		    //checkstr(mytools);
 		mystack->len =mytools->len;
 		mystack->len_a = mystack->len;
 		mystack->len_b = mystack->len;
 		mystack->stack_a = malloc(mystack->len * sizeof(int));
 		mystack->stack_b = malloc(mystack->len * sizeof(int));
-	  i = 0;
-while (i < mytools->len) {
+
+i = 0;
+while (i < mystack->len_a) {
     mystack->stack_a[i] = ft_atoi(mytools->str[i]);
     i++;
 }
+//  i =0;
+// while(i <mystack->len){
+// 	printf("stack[%d] == %d\n", i ,  mystack->stack_a[i]);
+// 	i++;
+// }
+// int j = 0;
+
+// while(i <mytools->len){
 
 
-			printf("len_a = %d\n", mystack->len_a);
- i =0;
-	while(i < mystack->len){
-		printf("|main.c stack_a[%d] == %d\n",i,  mystack->stack_a[i] );
-		i++;
-	}
+
+//check_dip( mystack);
+//check_range_int(mystack);
+
+ 
 
 
 if (mystack->len_a == 3)
@@ -63,19 +73,21 @@ if (mystack->len_a == 3)
 {
 	sorting_100(mystack);
 }
- 
-	// }
-	// 	while(i < mystack->len_b){
-	// 				printf("							|main.c stack_b[%d] == %d\n",i,  mystack->stack_b[i] );
 
-	// 			i++;
-	// }
+
+
+
+
+// 		while(i < mystack->len_b){
+// 					printf("							|main.c stack_b[%d] == %d\n",i,  mystack->stack_b[i] );
+
+// 				i++;
+// 	}
 //  i =0;
 // 	while(i < mystack->len_a){
 // 		printf("|main.c stack_a[%d] == %d\n",i,  mystack->stack_a[i] );
 // 		i++;
 // 	}
-
 
 }
 }
