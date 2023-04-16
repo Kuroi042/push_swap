@@ -16,17 +16,14 @@ void checkstr(t_mytools *mytools){
     int j = 0;
     while(i  < mytools->len){
         while(mytools->str[i][j]){
-            // if(mytools->str[i][j] == '\0'){
-            //     break; // exit inner loop if end of string is reached
-            // }
-             //printf("str[] === %c\n", mytools->str[i][j]);
             if(ft_isnumber(mytools->str[i][j])){
-                write(2, "alpha", 5);
+            write(2, "error\n", 6);
+            vree_tools(mytools);
                 exit(1);
             }
             j++;
         }
-        j = 0; // reset j for next row
+        j = 0; 
         i++;
     }
 }
@@ -40,7 +37,8 @@ void checkempty(t_mytools *mytools) {
         while ( j <=mytools->len) {
    
             if (mytools->str[i][j] == '\0') {
-                write(2,"empty",5);
+                  write(2, "error\n", 6);
+                vree_tools(mytools);
                 exit(1);
             }
             j++;
@@ -64,7 +62,8 @@ void check_range_int(t_mystack *mystack)
     while(mystack->stack_a[i]){
     if (mystack->stack_a[i] < INT_MIN || (mystack->stack_a[i] > INT_MAX))
     {   
-        write(2,"range",5);
+         write(2, "error\n", 6);
+        vree_stack(mystack);
         exit(1);
     }
     i++;
@@ -79,7 +78,8 @@ int j = 0;
 		while (mystack->stack_a[j])
 		{
 			if (mystack->stack_a[i] == mystack->stack_a[j]){
-				write(2,"dup",3);
+				  write(2, "error\n", 6);
+                vree_stack(mystack);
                 exit(1);
             }
 			else

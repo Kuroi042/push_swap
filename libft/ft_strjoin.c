@@ -38,5 +38,6 @@ char	*ft_strjoin(char const *first, char const *last)
 		p[i + ft_strlen(s1)] = s2[i];
 		i++;
 	}
+	free(s1);
 	return (p);
 }

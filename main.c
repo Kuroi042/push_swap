@@ -17,6 +17,7 @@ void args_parser(char **argv, t_mytools *mytools)
 		i++;
 	}
 	mytools->str = ft_split(join, ' ');
+	free(join);
 }
 
 int main(int argc, char *argv[])
@@ -29,30 +30,23 @@ int main(int argc, char *argv[])
 		t_mytools *mytools = (t_mytools *)malloc(sizeof(t_mytools));
 		t_mystack *mystack = (t_mystack *)malloc(sizeof(t_mystack));
 
+
 		args_parser(argv, mytools);
 		 counter(mytools);
-		  	
-		    //checkstr(mytools);
+		   checkstr(mytools);
 		mystack->len =mytools->len;
 		mystack->len_a = mystack->len;
-		//mystack->len_b = mystack->len;
 		mystack->stack_a = malloc(mystack->len * sizeof(int));
-		mystack->stack_b = malloc(mystack->len* sizeof(int));
+		mystack->stack_b = malloc(mystack->len * sizeof(int));
 
 i = 0;
 while (i < mystack->len) {
     mystack->stack_a[i] =atoi(mytools->str[i]);
     i++;
 }
-//printf("len == %d\n" ,mystack->len);
-// int j = 0;
-
-// while(i <mytools->len){
-
-
-
+mymapfree( mytools->str, mytools);
 //check_dip( mystack);
-//check_range_int(mystack);
+check_range_int(mystack);
 
 //  i =0;
 // while(i <mystack->len){
@@ -62,38 +56,21 @@ while (i < mystack->len) {
 // printf("len == %d\n",  mystack->len_b);
  
 
-
-// if (mystack->len == 3)
-// {
-// 	sort_three(mystack);
-// }
-//   else if (mystack->len == 5)
-// {
-// 	sort_cinq(mystack);
-// }
+if (mystack->len == 3)
+{
+	sort_three(mystack);
+}
+  else if (mystack->len == 5)
+{
+	sort_cinq(mystack);
+}
  if (mystack->len > 5)
 {
 	sorting_100(mystack);
 }
 
 
-
-
-
-// 		while(i < mystack->len_b){
-// 					printf("							|main.c stack_b[%d] == %d\n",i,  mystack->stack_b[i] );
-
-// 				i++;
-// 	}
-//  i =0;
-// 	while(i < mystack->len_a){
-// 		printf("|main.c stack_a[%d] == %d\n",i,  mystack->stack_a[i] );
-// 		i++;
-// 	}
-
 }
 }
  	 
 
-// // 	return 0;
-// // }

@@ -24,7 +24,6 @@ typedef struct  s_mystack
  int *temparr;
  int len_a;
  int len_b;
- int i;
 
 } t_mystack;
 
@@ -56,7 +55,10 @@ int *finder(t_mystack *mystack);
 void range(t_mystack *mystack, int *s);
 int big_index(t_mystack *mystack);
 int smal_index(t_mystack *mystack);
-int *finder2(t_mystack *mystack);
+//int *finder2(t_mystack *mystack);
 void return_b(t_mystack *mystack);
+void	vree_stack(t_mystack *mystack);
+void    vree_tools(t_mytools *mytools);
+void	mymapfree(char **map, t_mytools *mytools);
 
 #endif
