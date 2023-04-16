@@ -7,7 +7,6 @@
 
 void sort_three(t_mystack *mystack){
 
-
 	if (mystack->stack_a[0] > mystack->stack_a[1] && mystack->stack_a[0] < mystack->stack_a[2]
 		&& mystack->stack_a[1] < mystack->stack_a[2])
 		swap_a(mystack);
@@ -26,6 +25,7 @@ else if (mystack->stack_a[0] < mystack->stack_a[1] && mystack->stack_a[0] < myst
 		swap_a(mystack);
 		rotate_a(mystack);
 	}
+
 else if (mystack->stack_a[0] < mystack->stack_a[1] && mystack->stack_a[0] > mystack->stack_a[2]
 		&& mystack->stack_a[1] > mystack->stack_a[2])
 		r_rotate_a(mystack);
@@ -33,13 +33,25 @@ else if (mystack->stack_a[0] < mystack->stack_a[1] && mystack->stack_a[0] > myst
 }
 
 void sort_cinq(t_mystack *mystack){
- 	simplesorting(mystack , mystack->stack_a);
-	push_b(mystack);
-	push_b(mystack);
-	sort_three(mystack);
-	push_a(mystack);
-	push_a(mystack);
+	int i =0;
+ //printf("index = %d\n", smal_index(mystack));
+while(mystack->len_a>3){
+	if(smal_index(mystack) == 0 ){
+		//printf("i == %d && mystack->stack[%d] = %d index== %d\n", i , i ,mystack->stack_a[i] , smal_index(mystack));
+	  push_b(mystack);
+	}
+  if(smal_index(mystack) <=(mystack->len_a/2) ){ 
+	rotate_a(mystack);
 }
+else if(( smal_index(mystack)>= mystack->len_a/2 ))
+	r_rotate_a(mystack);
+	i++;
+}
+sort_three(mystack);
+ push_a(mystack);
+push_a(mystack);
+}
+
 
 void simplesorting(t_mystack *mystack ,  int  *arr) {
      int		 i;

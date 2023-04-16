@@ -13,7 +13,6 @@ typedef struct s_mytools
 {
     char **str;
     int len;
-    int *numbers;
 
 }t_mytools;
 
@@ -32,10 +31,11 @@ typedef struct  s_mystack
 
 void args_parser(char **argv, t_mytools *mytools);
 void counter(t_mytools *mytools);
+ //void checkstr(t_mytools *mytools);
 
-void check_dip(t_mystack *mystack);
-long ft_atoi_push(char *str);
-void check_range_int(t_mystack *mystack);
+//void check_dip(t_mystack *mystack);
+// void earlycheck(t_mytools *mytools);
+//void check_range_int(t_mystack *mystack);
 void swap_a(t_mystack *mystack);
 void swap_b(t_mystack *mystack);
 void swap_ab(t_mystack *mystack);
@@ -53,6 +53,8 @@ void sorting_100(t_mystack *mystack);
 int *finder(t_mystack *mystack);
 void range(t_mystack *mystack, int *s);
 int big_index(t_mystack *mystack);
+int smal_index(t_mystack *mystack);
 int *finder2(t_mystack *mystack);
 void return_b(t_mystack *mystack);
+
 #endif

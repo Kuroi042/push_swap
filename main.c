@@ -5,7 +5,6 @@ void  counter (t_mytools *mytools)
 	while (mytools->str[mytools->len])
 		mytools->len++;
 }
-
 void args_parser(char **argv, t_mytools *mytools)
 {
 	int i = 0;
@@ -13,7 +12,6 @@ void args_parser(char **argv, t_mytools *mytools)
 	join = ft_strdup(" ");
 	while (argv[i])
 	{
-
 		join = ft_strjoin(join, " ");
 		join = ft_strjoin(join, argv[i]);
 		i++;
@@ -33,51 +31,55 @@ int main(int argc, char *argv[])
 
 		args_parser(argv, mytools);
 		 counter(mytools);
-		mystack->stack_a = malloc(mystack->len * sizeof(int));
 		mystack->len =mytools->len;
 		mystack->len_a = mystack->len;
-		while (i < mytools->len)
-		{
-			mystack->stack_a[i] = ft_atoi_push(mytools->str[i]);
-			i++;
-		}
-		check_range_int(mystack);
-
-		//check_dip(mystack);
+		mystack->len_b = mystack->len;
+		mystack->stack_a = malloc(mystack->len * sizeof(int));
 		mystack->stack_b = malloc(mystack->len * sizeof(int));
-		 i = 0;
-	// 	while(i <mystack->len){
-	// printf("mystack->stack[%d] = %d \n", i ,mystack->stack_a[i]);
-	// i++;
-	// 	}
-	}
+	  i = 0;
+while (i < mytools->len) {
+    mystack->stack_a[i] = ft_atoi(mytools->str[i]);
+    i++;
 }
 
 
-// if (mystack->len == 3)
-// {
-// 	sort_three(mystack);
-// }
-// else if (mystack->len == 5)
-// {
-// 	sort_cinq(mystack);
-// }
-// else if (mystack->len > 5)
-// {
-// 	sorting_100(mystack);
-// }
-// printf("\n");
-//   i = 0;
+			printf("len_a = %d\n", mystack->len_a);
+ i =0;
+	while(i < mystack->len){
+		printf("|main.c stack_a[%d] == %d\n",i,  mystack->stack_a[i] );
+		i++;
+	}
+
+
+if (mystack->len_a == 3)
+{
+	sort_three(mystack);
+}
+ else if (mystack->len == 5)
+{
+	sort_cinq(mystack);
+}
+ else  if (mystack->len > 5)
+{
+	sorting_100(mystack);
+}
+ 
+	// }
+	// 	while(i < mystack->len_b){
+	// 				printf("							|main.c stack_b[%d] == %d\n",i,  mystack->stack_b[i] );
+
+	// 			i++;
+	// }
+//  i =0;
 // 	while(i < mystack->len_a){
 // 		printf("|main.c stack_a[%d] == %d\n",i,  mystack->stack_a[i] );
 // 		i++;
 // 	}
-//   }
-// i = 0;
-// 		while(i < mystack->len_b){
-// 	printf("               stack_b[%d] == %d\n",i, mystack->stack_b[i]);
-// // 				i++;
-// // 		}
+
+
+}
+}
+ 	 
 
 // // 	return 0;
 // // }

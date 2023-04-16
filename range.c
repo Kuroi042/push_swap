@@ -107,6 +107,25 @@ int big_index(t_mystack *mystack)
     }
     return(j);
 }
+int smal_index(t_mystack *mystack){
+    int smal_num;
+    int i; 
+    int j; 
+    j = 0;
+    i = 0;
+    smal_num = mystack->stack_a[0];
+    while(i < mystack->len_a) 
+    {
+        if (mystack->stack_a[i] < smal_num)
+        {
+            j = i;
+            smal_num = mystack->stack_a[i];
+        }
+        i++;
+    }
+    return(j);
+
+}
 
 void return_b(t_mystack *mystack){
 int i = 0;

@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "unistd.h": "c",
-        "libft.h": "c"
+        "libft.h": "c",
+        "string.h": "c",
+        "sstream": "c"
     }
 }

@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include <string.h>
-#include <stdio.h>
 
 int	ft_atoi(char *str)
-{	
+{
 	size_t	i;
 	int		sign;
 	int		nbr;
@@ -32,11 +32,7 @@ int	ft_atoi(char *str)
 	}
 	else if (str[i] == '+')
 		i++;
-			else{
-			}
-		
 	while (str[i] >= '0' && str[i] <= '9')
-	
 	{
 		nbr = (nbr * 10) + (str[i] - '0');
 		i++;
