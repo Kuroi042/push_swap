@@ -1,5 +1,5 @@
 #include "push_swap.h"
-#include <string.h>
+
 void sorting_100(t_mystack *mystack)
 {
     int *s;
@@ -12,7 +12,6 @@ void sorting_100(t_mystack *mystack)
     int j = 0;
     while(j < mystack->len_a)
     {
-        printf("---->%d\n", s[j]);
         j++;
     }
     return_b(mystack);
@@ -54,13 +53,13 @@ void range(t_mystack *mystack, int *s)
         // printf("s[0]-->%d\n", s[0]);
         s = finder(mystack);
         // printf("i = %d  i + range = %d\n", i, i + range);
-        if (s[0] <= i)
+        if (s[0] < i)
         {
             push_b(mystack);
             rotate_b(mystack);
             i++;
         }
-        else if (s[0] <= range + i)
+        else if ( s[0] >= i && s[0] < range + i)
         {
             push_b(mystack);
             i++;
