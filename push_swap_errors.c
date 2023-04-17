@@ -18,7 +18,7 @@ void checkstr(t_mytools *mytools){
         while(mytools->str[i][j]){
             if(ft_isnumber(mytools->str[i][j])){
             write(2, "error\n", 6);
-            vree_tools(mytools);
+            //vree_tools(mytools);
                 exit(1);
             }
             j++;
@@ -38,7 +38,7 @@ void checkempty(t_mytools *mytools) {
    
             if (mytools->str[i][j] == '\0') {
                   write(2, "error\n", 6);
-                vree_tools(mytools);
+                //vree_tools(mytools);
                 exit(1);
             }
             j++;
@@ -79,7 +79,7 @@ int j = 0;
 		{
 			if (mystack->stack_a[i] == mystack->stack_a[j]){
 				  write(2, "error\n", 6);
-                vree_stack(mystack);
+               // vree_stack(mystack);
                 exit(1);
             }
 			else
@@ -99,7 +99,6 @@ int is_sorted(t_mystack *mystack) {
         i++;
     }
     if (i == mystack->len - 1) {
-       // array is sorted, print newline
     }
     return 0; // sorted
 }

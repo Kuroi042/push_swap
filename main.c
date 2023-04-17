@@ -12,8 +12,8 @@ void args_parser(char **argv, t_mytools *mytools)
 	join = ft_strdup(" ");
 	while (argv[i])
 	{
-		join = ft_strjoin(join, " ");
-		join = ft_strjoin(join, argv[i]);
+		join = ft_strjoinpush(join, " ");
+		join = ft_strjoinpush(join, argv[i]);
 		i++;
 	}
 	mytools->str = ft_split(join, ' ');
@@ -44,7 +44,7 @@ while (i < mystack->len) {
     mystack->stack_a[i] =atoi(mytools->str[i]);
     i++;
 }
-mymapfree( mytools->str, mytools);
+//mymapfree( mytools->str, mytools);
 //check_dip( mystack);
 check_range_int(mystack);
 
@@ -69,6 +69,7 @@ if (mystack->len == 3)
 	sorting_100(mystack);
 }
 
+ 
 
 }
 }

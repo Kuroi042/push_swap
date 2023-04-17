@@ -13,9 +13,7 @@ void sorting_100(t_mystack *mystack)
 
     return_b(mystack);
  
-    vree_stack(mystack);
-
- 
+   //vree_stack(mystack);
 
 }
 
@@ -41,8 +39,8 @@ int *finder(t_mystack *mystack)
         }
         i++;
     }
-    free(index);
     return (index);
+    free(index);
 }
 
 void range(t_mystack *mystack, int *s)
@@ -72,32 +70,6 @@ void range(t_mystack *mystack, int *s)
         // s = finder(mystack);
     }
 }
-
-// int *finder2(t_mystack *mystack)
-// {
-//     int i = 0; // stack_a
-//     int j = 0; // temp_stack
-//     int t = 0;
-//     int *s;
-//     s = malloc(sizeof(int) * mystack->len_b);
-//     while (i < mystack->len_b)
-//     {
-//         j = 0;
-//         while (j < mystack->len_b)
-//         {
-//             if (mystack->stack_b[i] == mystack->temparr[j])
-//             {
-//                 s[t] = j;
-//                 t++;
-//                 j = mystack->len_b;
-//             }
-//             j++;
-//         }
-//         i++;
-//     }
-//     return (s);
-// }
- 
 
 int big_index(t_mystack *mystack)
 {
@@ -135,8 +107,8 @@ int smal_index(t_mystack *mystack){
         i++;
     }
     return(j);
-
 }
+
 
 void return_b(t_mystack *mystack){
 int i = 0;
