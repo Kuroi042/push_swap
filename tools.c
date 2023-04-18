@@ -55,3 +55,42 @@ size_t	ft_strlenget(char *str)
 	}
 	return (i);
 }
+int	ft_atoi_push(char *str)
+{
+	size_t	i;
+	int		sign;
+	long		nbr;
+
+	nbr = 0;
+	sign = 1;
+	i = 0;
+	while ( *str == ' ' )
+		str++;
+	if (str[i] == '-' && str[i+1] != ' ')
+	{
+		i++;
+		sign = sign * -1;
+	}
+	else if (str[i] == '+' &&  str[i+1] != ' ')
+		i++;
+	// else {
+	// write(2,"Error\n",6);
+	// exit(1);
+	// }
+  while (str[i]) {
+        if (str[i] >= '0' && str[i] <= '9') {
+            int digit = str[i] - '0';
+            nbr = nbr * 10 + digit;
+            if ((sign * nbr) > INT_MAX || (sign * nbr) < INT_MIN) {
+					write(2,"Error\n",6);
+	                exit(1);
+            }
+        } else {
+            write(2,"Error\n",6);
+            exit(1);
+        }
+        i++;
+    }
+
+	return (nbr * sign);
+}

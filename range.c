@@ -12,8 +12,8 @@ void sorting_100(t_mystack *mystack)
     int j = 0;
 
     return_b(mystack);
- 
-   //vree_stack(mystack);
+  //vree_stack(mystack);
+
 
 }
 
@@ -39,8 +39,10 @@ int *finder(t_mystack *mystack)
         }
         i++;
     }
-    return (index);
-    free(index);
+        //free(index); //leaks haaaaa
+   return (index);
+
+  
 }
 
 void range(t_mystack *mystack, int *s)
@@ -67,8 +69,8 @@ void range(t_mystack *mystack, int *s)
         }
         else
             rotate_a(mystack);
-        // s = finder(mystack);
     }
+
 }
 
 int big_index(t_mystack *mystack)
@@ -90,6 +92,7 @@ int big_index(t_mystack *mystack)
     }
     return(j);
 }
+
 int smal_index(t_mystack *mystack){
     int smal_num;
     int i; 

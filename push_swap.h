@@ -24,6 +24,7 @@ typedef struct  s_mystack
  int *temparr;
  int len_a;
  int len_b;
+ int is_sorted;
 
 } t_mystack;
 
@@ -33,13 +34,14 @@ void counter(t_mytools *mytools);
 void checkstr(t_mytools *mytools);
 
  void check_dip(t_mystack *mystack);
-//void checkempty(t_mytools *mytools);
+int space_error(char *str);
+
 int	ft_isnumber(int c);
 char	*ft_strjoinpush(char *s1, char *s2);
 void	*ft_callocget(size_t count, size_t size);
 size_t	ft_strlenget(char *str);
-void check_range_int(t_mystack *mystack);
-int is_sorted(t_mystack *mystack);
+// void check_range_int(t_mystack *mystack);
+void  is_sorted(t_mystack *mystack);
 void swap_a(t_mystack *mystack);
 void swap_b(t_mystack *mystack);
 void swap_ab(t_mystack *mystack);
@@ -63,5 +65,7 @@ void return_b(t_mystack *mystack);
 void	vree_stack(t_mystack *mystack);
 void    vree_tools(t_mytools *mytools);
 void	mymapfree(char **map, t_mytools *mytools);
+int	ft_atoi_push(char *str);
+// void space_error( char *str);
 
 #endif
