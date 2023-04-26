@@ -122,12 +122,16 @@ int space_error(char *str)
 }
 
 void print_array(char *str) {
-        int j = 0;
+       char c = '\0';
+       char s = ' ';
     int i = 0;
-
-            if((str[i] == '+' || str[i] == '-')&&(str[i+1] == '\0')){
+while(str[i]){
+            if((str[i] == '+' || str[i] == '-')&&((str[i+1] == c)||(str[i+1] == s))){
                 write(2,"Error\n",6);
                 exit(1);
- 
-    }
+            
+            }
+
+i++;
+}
 }
