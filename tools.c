@@ -73,10 +73,6 @@ int	ft_atoi_push(char *str)
 	}
 	else if (str[i] == '+' &&  str[i+1] != ' ')
 		i++;
-	// else {
-	// write(2,"Error\n",6);
-	// exit(1);
-	// }
   while (str[i]) {
         if (str[i] >= '0' && str[i] <= '9') {
             int digit = str[i] - '0';

@@ -120,3 +120,14 @@ int space_error(char *str)
     }
     return (1);
 }
+
+void print_array(char *str) {
+        int j = 0;
+    int i = 0;
+
+            if((str[i] == '+' || str[i] == '-')&&(str[i+1] == '\0')){
+                write(2,"Error\n",6);
+                exit(1);
+ 
+    }
+}

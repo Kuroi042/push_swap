@@ -4,7 +4,10 @@
 // If a is greater than c, swap a and c.
 // If b is greater than c, swap b and c.
 
-
+void sort_two(t_mystack *mystack){
+if(mystack->stack_a[0]>mystack->stack_a[1])
+	swap_a(mystack);
+}
 void sort_three(t_mystack *mystack){
 
 	if (mystack->stack_a[0] > mystack->stack_a[1] && mystack->stack_a[0] < mystack->stack_a[2]
@@ -31,7 +34,22 @@ else if (mystack->stack_a[0] < mystack->stack_a[1] && mystack->stack_a[0] > myst
 		r_rotate_a(mystack);
 
 }
-
+void sort_four(t_mystack *mystack){
+	int i = 0;
+	while(mystack->len_a>3){
+	if(smal_index(mystack) == 0 ){
+	  push_b(mystack);
+	}
+	if(smal_index(mystack) <= mystack->len_a/2)
+		rotate_a(mystack);
+	else if(smal_index(mystack) >= mystack->len_a/2){
+		r_rotate_a(mystack);
+		i++;
+	}
+	}
+	sort_three(mystack);
+	push_a(mystack);
+}
 void sort_cinq(t_mystack *mystack){
 	int i =0;
  //printf("index = %d\n", smal_index(mystack));
@@ -43,7 +61,7 @@ while(mystack->len_a>3){
   if(smal_index(mystack) <=(mystack->len_a/2) ){ 
 	rotate_a(mystack);
 }
-else if(( smal_index(mystack)>= mystack->len_a/2 ))
+else if((smal_index(mystack)>= mystack->len_a/2 ))
 	r_rotate_a(mystack);
 	i++;
 }

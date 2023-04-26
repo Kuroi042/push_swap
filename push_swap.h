@@ -66,6 +66,9 @@ void	vree_stack(t_mystack *mystack);
 void    vree_tools(t_mytools *mytools);
 void	mymapfree(char **map, t_mytools *mytools);
 int	ft_atoi_push(char *str);
+void print_array(char *str);
+void sort_four(t_mystack *mystack);
+void sort_two(t_mystack *mystack);
 // void space_error( char *str);
 
 #endif

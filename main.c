@@ -17,6 +17,7 @@ void args_parser(char **argv, t_mytools *mytools)
 			write(2,"Error\n",6);
 			exit(1);
 		}
+		print_array(argv[i]);
 		join = ft_strjoinpush(join, " ");
 		join = ft_strjoinpush(join, argv[i]);
 		i++;
@@ -52,28 +53,37 @@ while (i < mystack->len) {
     i++;
 }
  
-// while(i < mytools->len){
-// 	printf("mystack->stack_[%d] = %d\n",i,mystack->stack_a[i]);
-// 	i++;
-// }
-//  check_range_int( mystack);
+while(i < mytools->len){
+	printf("mystack->stack_[%d] = %d\n",i,mystack->stack_a[i]);
+	i++;
+}
 
  check_dip( mystack);
 is_sorted( mystack);
 
 if(mystack->is_sorted == 0){
-if (mystack->len == 3)
+if(mystack->len == 2)
+	sort_two(mystack);
+	
+else if (mystack->len == 3)
 	sort_three(mystack);
+else if(mystack->len == 4)
+	 sort_four(mystack);
   else if (mystack->len == 5)
 	sort_cinq(mystack);
  if (mystack->len > 5)
 	sorting_100(mystack);
 }
+i = 0;
+// while(i < mytools->len){
+// 	printf("mystack->stack_[%d] = %d\n",i,mystack->stack_a[i]);
+// 	i++;
+// }
 }
-else if(argc == 1){
-write(2,"Error\n",6);
-exit(1);
-}
+// else if(argc == 1){
+// write(2,"Error\n",6);
+// exit(1);
+// }
 
 
 }
