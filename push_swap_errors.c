@@ -11,29 +11,6 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-// void print_array(char **arr, int len) {
-//     int i = 0;
-//     while (i < len) {
-//         int j = 0;
-//         while (arr[i][j] != '\0') {
-//             printf("%c ", arr[i][j]);
-//             j++;
-//         }
-//         printf("\n");  // print newline at end of each row
-//         i++;
-//     }
-// }
-
-
-// int	ft_isnumber(int c)
-// {
-// 	if ((c >= '0' && c <= '9') || (c == '+' || c == '-'))
-// 	{
-// 		return (0);
-// 	}
-// 	else
-// 		return (1);
-// }
 
 void	check_dip(t_mystack *mystack , t_mytools *mytools)
 {
@@ -48,10 +25,9 @@ void	check_dip(t_mystack *mystack , t_mytools *mytools)
 		while (mystack->stack_a[j])
 		{
 			if (mystack->stack_a[i] == mystack->stack_a[j]){
-				free(mystack->stack_a);
+				//free(mystack->stack_a);
 				error_medium( mystack ,  mytools);
-			}
-					
+			}		
 			else
 				j++;
 		}
@@ -59,7 +35,7 @@ void	check_dip(t_mystack *mystack , t_mytools *mytools)
 	}
 }
 
-void	is_sorted(t_mystack *mystack)
+void	is_sorted(t_mystack *mystack,t_mytools *mytools)
 {
 	int	i;
 
@@ -76,19 +52,17 @@ void	is_sorted(t_mystack *mystack)
 	if (i == mystack->len - 1)
 	{
 		mystack->is_sorted = 1;
+		error_medium( mystack ,  mytools );
 	}
 }
 
-int	space_error(char *str)
+int	space_error(char *str )
 {
 	int	i;
 
 	i = 0;
 	if (str[0] == '\0')
-	{
-		write(2, "Error\n", 6);
-		exit(1);
-	}
+		return 1;
 	while (str[i])
 	{
 		if (str[i] != ' ')

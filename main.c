@@ -37,33 +37,42 @@ int	main(int argc, char *argv[])
 			i++;
 		}
 		check_dip(mystack ,mytools);
-		is_sorted(mystack);
-		sorting_machine(mystack);
+		is_sorted(mystack,mytools);
+		sorting_machine(mystack,mytools);
+		// i = 0;
+		// while(i <mystack->len_a){
+		// 	printf("mystack->stack_a[%d]=%d\n",i,mystack->stack_a[i]);
+		// i++;
+		// }
 	}
 }
 
-void	sorting_machine(t_mystack *mystack)
+void	sorting_machine(t_mystack *mystack, t_mytools *mytools)
 {
 	if (mystack->is_sorted == 0)
 	{
 		if (mystack->len == 2){
 			sort_two(mystack);
-	
+			error_medium( mystack , mytools);
+
 		}
 		else if (mystack->len == 3){
 			sort_three(mystack);
+			error_medium( mystack , mytools);
 
 		}
 		else if (mystack->len == 4){
 			sort_four(mystack);
+			error_medium( mystack , mytools);
 		
 		}
 		else if (mystack->len == 5){
 			sort_cinq(mystack);
+				error_medium( mystack , mytools);
 		}
 		if (mystack->len > 5){
-			sorting_100(mystack);
-		 
+			sorting_100(mystack);	 
+				error_medium( mystack , mytools);
 	}
 	}
 }

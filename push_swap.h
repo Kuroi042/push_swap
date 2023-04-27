@@ -25,6 +25,7 @@ typedef struct s_mytools
 {
     char **str;
     int len;
+    char *join;
 
 } t_mytools;
 
@@ -43,11 +44,11 @@ typedef struct s_mystack
 void args_parser(char **argv, t_mytools *mytools,t_mystack *mystack);
 void counter(t_mytools *mytools);
 void check_dip(t_mystack *mystack , t_mytools *mytools);
-int space_error(char *str);
+int	space_error(char *str );
 char *ft_strjoinpush(char *s1, char *s2);
 void *ft_callocget(size_t count, size_t size);
 size_t ft_strlenget(char *str);
-void is_sorted(t_mystack *mystack);
+void	is_sorted(t_mystack *mystack,t_mytools *mytools);
 void swap_a(t_mystack *mystack);
 void swap_b(t_mystack *mystack);
 void swap_ab(t_mystack *mystack);
@@ -74,7 +75,7 @@ int ft_atoi_push(char *str);
 void sign_error(char *str, t_mystack *mystack, t_mytools *mytools);
 void sort_four(t_mystack *mystack);
 void sort_two(t_mystack *mystack);
-void sorting_machine(t_mystack *mystack);
+void	sorting_machine(t_mystack *mystack, t_mytools *mytools);
 long calculate_number(char *str, int sign);
 int ft_atoi_push(char *str);
 void error_normal(t_mystack *mystack, t_mytools *mytools);

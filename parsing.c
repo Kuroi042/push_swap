@@ -22,21 +22,23 @@ void	args_parser(char **argv, t_mytools *mytools ,t_mystack *mystack )
 {
 	int		i;
 	int		j;
-	char	*join;
+	// char	*join;
 
 	i = 0;
 	j = 0;
-	join = ft_strdup(" ");
+	mytools->join = ft_strdup(" ");
 	while (argv[i])
 	{
-		if (space_error(argv[i]))
-		error_normal(mystack ,  mytools );
+		if (space_error(argv[i])){
+			
+		error_normal(mystack ,  mytools);
+		}
 		 sign_error(argv[i], mystack , mytools);
-		join = ft_strjoinpush(join, " ");
-		join = ft_strjoinpush(join, argv[i]);
+		mytools->join = ft_strjoinpush(mytools->join, " ");
+		mytools->join = ft_strjoinpush(mytools->join, argv[i]);
 		i++;
 	}
-	mytools->str = ft_split(join, ' ');
-	free(join);
+	mytools->str = ft_split(mytools->join, ' ');
+		free(mytools->join);
 	counter(mytools);
 }
