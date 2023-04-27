@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:56:47 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/27 18:07:09 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/27 22:29:07 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,17 @@ void	sorting_100(t_mystack *mystack)
 	ft_memcpy(mystack->temparr, mystack->stack_a, sizeof(int) * mystack->len);
 	simplesorting(mystack, mystack->temparr);
 	s = finder(mystack);
-		free(mystack->index);
+
  range(mystack, s);
+
+
+ 	free(s);
+ 
 	j = 0;
+	
 	return_b(mystack);
+				// while(1){}
+	
 }
 
 int	*finder(t_mystack *mystack)
@@ -53,8 +60,9 @@ int	*finder(t_mystack *mystack)
 		}
 		i++;
 	}
-
+		
 	return (mystack->index);
+	
 }
 
 void	range(t_mystack *mystack, int *s)
@@ -82,6 +90,7 @@ void	range(t_mystack *mystack, int *s)
 		}
 		else
 			rotate_a(mystack);
+	free(mystack->index);
 	}
 }
 

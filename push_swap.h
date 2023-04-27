@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:55:12 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/27 18:40:10 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/27 22:03:51 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ typedef struct s_mytools
     char **str;
     int len;
     char *join;
-
 } t_mytools;
 
 typedef struct s_mystack
