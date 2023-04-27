@@ -14,16 +14,12 @@
 
 void	vree_stack(t_mystack *mystack,t_mytools *mytools)
 {
-	// while(1){}
 	mymapfree(mytools->str, mytools);
-	mytools = NULL;
 	free(mytools);
-	// free(mystack->stack_a);
+ 	 free(mystack->stack_a);
 	free(mystack->stack_b);
-	// free(mystack->index);
-	mystack = NULL;
+	free(mystack->temparr);
 	free(mystack);
-	
 }
 
 void	vree_tools(t_mytools *mytools)
@@ -40,9 +36,8 @@ void	mymapfree(char **map, t_mytools *mytools)
 	{
 		free(map[i]);
 		i++;
-		// printf("map[i] %p\n", map[i]);
 	}
-	// printf("map[i] %p\n", map);
+ 
 	free(map);
 }
 void error_normal(t_mystack *mystack , t_mytools *mytools ){
@@ -64,7 +59,6 @@ void error_medium(t_mystack *mystack , t_mytools *mytools ){
 }
 
 void simple_free(t_mystack *mystack , t_mytools *mytools ){
-		// write(2, "Error\n", 6);
 		mymapfree(mytools->str, mytools);
 		free(mystack->stack_a);
 		free(mystack->stack_b);

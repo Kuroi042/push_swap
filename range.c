@@ -23,14 +23,8 @@ void	sorting_100(t_mystack *mystack)
 	ft_memcpy(mystack->temparr, mystack->stack_a, sizeof(int) * mystack->len);
 	simplesorting(mystack, mystack->temparr);
 	s = finder(mystack);
-
- range(mystack, s);
-
-
+ 	range(mystack, s);	
  	free(s);
- 
-	j = 0;
-	
 	return_b(mystack);
 				// while(1){}
 	

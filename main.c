@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <string.h>
 
 int	main(int argc, char *argv[])
 {
@@ -40,7 +39,10 @@ int	main(int argc, char *argv[])
 		is_sorted(mystack,mytools);
 		sorting_machine(mystack,mytools);
 		i = 0;
-
+while(i < mystack->len){
+	printf("mystack->stack[%d] = %d\n",i,mystack->stack_a[i]);
+	i++;
+}
  
 
 	}
@@ -52,34 +54,25 @@ void	sorting_machine(t_mystack *mystack, t_mytools *mytools)
 	{
 		if (mystack->len == 2){
 			sort_two(mystack);
-	
-
+	vree_stack( mystack, mytools);
 		}
 		else if (mystack->len == 3){
 			sort_three(mystack);
 			vree_stack( mystack, mytools);
-
 		}
 		else if (mystack->len == 4){
 			sort_four(mystack);
-	
 		vree_stack( mystack, mytools);
 		
 		}
 		else if (mystack->len == 5){
 			sort_cinq(mystack);
-		
 			 vree_stack( mystack, mytools);
 		}
 		else if (mystack->len > 5){
-			sorting_100(mystack);
+			sorting_100(mystack);	
+			vree_stack( mystack, mytools);
 			
-			 vree_stack( mystack, mytools);
-		
-			int i ;
-			i = 0;
-
- 
 	}
 	}
 }
