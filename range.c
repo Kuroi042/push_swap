@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:56:47 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/27 13:24:18 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/27 18:07:09 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,21 +23,21 @@ void	sorting_100(t_mystack *mystack)
 	ft_memcpy(mystack->temparr, mystack->stack_a, sizeof(int) * mystack->len);
 	simplesorting(mystack, mystack->temparr);
 	s = finder(mystack);
-	range(mystack, s);
+		free(mystack->index);
+ range(mystack, s);
 	j = 0;
 	return_b(mystack);
-	//vree_stack(mystack);
 }
 
 int	*finder(t_mystack *mystack)
 {
 	int	t;
-	int	*index;
+
 
 	int i = 0; // stack_a
 	int j = 0; // temp_stack
 	t = 0;
-	index = malloc(sizeof(int) * mystack->len);
+	mystack->index = malloc(sizeof(int) * mystack->len);
 	while (i < mystack->len)
 	{
 		j = 0;
@@ -45,7 +45,7 @@ int	*finder(t_mystack *mystack)
 		{
 			if (mystack->stack_a[i] == mystack->temparr[j])
 			{
-				index[t] = j;
+				mystack->index[t] = j;
 				t++;
 				j = mystack->len;
 			}
@@ -53,8 +53,8 @@ int	*finder(t_mystack *mystack)
 		}
 		i++;
 	}
-	free(index); //leaks haaaaa
-	return (index);
+
+	return (mystack->index);
 }
 
 void	range(t_mystack *mystack, int *s)

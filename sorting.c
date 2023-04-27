@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:56:50 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/26 18:05:21 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/27 16:10:08 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void sort_two(t_mystack *mystack)
 {
 	if (mystack->stack_a[0] > mystack->stack_a[1])
 		swap_a(mystack);
+
+	 
 }
 void sort_three(t_mystack *mystack)
 {

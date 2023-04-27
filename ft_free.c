@@ -6,24 +6,26 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:55:36 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/26 23:59:35 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/27 15:19:28 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	vree_stack(t_mystack *mystack)
-{
-	free(mystack->stack_a);
-	free(mystack->stack_b);
-	mystack = NULL;
-	free(mystack);
-}
-void	vree_tools(t_mytools *mytools)
+void	vree_stack(t_mystack *mystack,t_mytools *mytools)
 {
 	mymapfree(mytools->str, mytools);
 	mytools = NULL;
 	free(mytools);
+	free(mystack->stack_a);
+	free(mystack->stack_b);
+	mystack = NULL;
+	free(mystack);
+	
+}
+void	vree_tools(t_mytools *mytools)
+{
+
 }
 
 void	mymapfree(char **map, t_mytools *mytools)
@@ -56,5 +58,6 @@ void error_medium(t_mystack *mystack , t_mytools *mytools ){
 			free(mytools);
 			exit(1);
 }
+
 
 

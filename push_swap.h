@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:55:12 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/26 23:57:01 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/27 16:26:29 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct s_mystack
     int len_a;
     int len_b;
     int is_sorted;
+    int *index;
 
 } t_mystack;
 
@@ -68,7 +69,7 @@ void range(t_mystack *mystack, int *s);
 int big_index(t_mystack *mystack);
 int smal_index(t_mystack *mystack);
 void return_b(t_mystack *mystack);
-void vree_stack(t_mystack *mystack);
+void	vree_stack(t_mystack *mystack,t_mytools *mytools);
 void vree_tools(t_mytools *mytools);
 void	mymapfree(char **map, t_mytools *mytools);
 int ft_atoi_push(char *str);
