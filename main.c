@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:55:20 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/27 18:28:14 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/27 19:07:50 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,24 +60,24 @@ void	sorting_machine(t_mystack *mystack, t_mytools *mytools)
 		else if (mystack->len == 3){
 			sort_three(mystack);
 			//error_medium( mystack , mytools);
-			vree_stack( mystack, mytools);
+			// vree_stack( mystack, mytools);
 
 		}
 		else if (mystack->len == 4){
 			sort_four(mystack);
 			//error_medium( mystack , mytools);
-			vree_stack( mystack, mytools);
+			// vree_stack( mystack, mytools);
 		
 		}
 		else if (mystack->len == 5){
 			sort_cinq(mystack);
 				//error_medium( mystack , mytools);
-				vree_stack( mystack, mytools);
+				// vree_stack( mystack, mytools);
 		}
-		if (mystack->len > 5){
+		else if (mystack->len > 5){
 			sorting_100(mystack);	 
 				//error_medium( mystack , mytools);
-				vree_stack( mystack, mytools);
+				// vree_stack( mystack, mytools);
  
 	}
 	}

@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:55:08 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/27 00:00:31 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/27 19:08:28 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	is_sorted(t_mystack *mystack,t_mytools *mytools)
 	if (i == mystack->len - 1)
 	{
 		mystack->is_sorted = 1;
-		error_medium( mystack ,  mytools );
+	  simple_free( mystack , mytools );
 	}
 }
 

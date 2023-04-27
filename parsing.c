@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:55:18 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/26 23:39:34 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/27 19:01:56 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,6 @@ void	args_parser(char **argv, t_mytools *mytools ,t_mystack *mystack )
 		i++;
 	}
 	mytools->str = ft_split(mytools->join, ' ');
-		free(mytools->join);
+	free(mytools->join);
 	counter(mytools);
 }

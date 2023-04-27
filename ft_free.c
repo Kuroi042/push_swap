@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:55:36 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/27 15:19:28 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/27 19:10:24 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,23 @@ void error_normal(t_mystack *mystack , t_mytools *mytools ){
 }
 
 void error_medium(t_mystack *mystack , t_mytools *mytools ){
-			write(2, "Error\n", 6);
-		
+		write(2, "Error\n", 6);
 		mymapfree(mytools->str, mytools);
 		free(mystack->stack_a);
 		free(mystack->stack_b);
 			free(mystack);
 			free(mytools);
-			exit(1);
+			exit(0);
+}
+
+void simple_free(t_mystack *mystack , t_mytools *mytools ){
+		// write(2, "Error\n", 6);
+		mymapfree(mytools->str, mytools);
+		free(mystack->stack_a);
+		free(mystack->stack_b);
+			free(mystack);
+			free(mytools);
+			exit(0);
 }
 
 

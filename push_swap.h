@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:55:12 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/27 16:26:29 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/27 18:40:10 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,4 +81,5 @@ long calculate_number(char *str, int sign);
 int ft_atoi_push(char *str);
 void error_normal(t_mystack *mystack, t_mytools *mytools);
 void error_medium(t_mystack *mystack , t_mytools *mytools );
+void simple_free(t_mystack *mystack , t_mytools *mytools );
 #endif
