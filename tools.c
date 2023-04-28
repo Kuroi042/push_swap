@@ -69,7 +69,7 @@ size_t	ft_strlenget(char *str)
 	return (i);
 }
 
-int	ft_atoi_push(char *str)
+int	ft_atoi_push(char *str , t_mytools *mytools , t_mystack *mystack)
 {
 	size_t	i;
 	int		sign;
@@ -87,11 +87,11 @@ int	ft_atoi_push(char *str)
 	}
 	else if (str[i] == '+' && str[i + 1] != ' ')
 		i++;
-	nbr = calculate_number(str + i, sign);
+	nbr = calculate_number(str + i, sign, mytools , mystack);
 	return (nbr);
 }
 
-long	calculate_number(char *str, int sign)
+long	calculate_number(char *str, int sign, t_mytools *mytools , t_mystack *mystack)
 {
 	size_t	i;
 	long	nbr;
@@ -106,16 +106,10 @@ long	calculate_number(char *str, int sign)
 			digit = str[i] - '0';
 			nbr = nbr * 10 + digit;
 			if ((sign * nbr) > INT_MAX || (sign * nbr) < INT_MIN)
-			{
-				write(2, "Error\n", 6);
-				exit(1);
-			}
+				 	error_medium( mystack,  mytools);
 		}
 		else
-		{
-			write(2, "Error\n", 6);
-			exit(1);
-		}
+			error_medium( mystack,  mytools);
 		i++;
 	}
 	return (nbr * sign);

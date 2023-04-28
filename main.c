@@ -31,7 +31,7 @@ int	main(int argc, char *argv[])
 		mystack->stack_b = malloc(mystack->len * sizeof(int));
 		while (i < mystack->len)
 		{
-			mystack->stack_a[i] = ft_atoi_push(mytools->str[i]);
+			mystack->stack_a[i] = ft_atoi_push(mytools->str[i],mytools , mystack);
 			i++;
 		}
 		check_dip(mystack, mytools);
