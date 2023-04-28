@@ -6,13 +6,13 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:55:08 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/27 19:08:28 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/28 00:16:30 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	check_dip(t_mystack *mystack , t_mytools *mytools)
+void	check_dip(t_mystack *mystack, t_mytools *mytools)
 {
 	int	i;
 	int	j;
@@ -24,10 +24,10 @@ void	check_dip(t_mystack *mystack , t_mytools *mytools)
 		j = i + 1;
 		while (mystack->stack_a[j])
 		{
-			if (mystack->stack_a[i] == mystack->stack_a[j]){
-				//free(mystack->stack_a);
-				error_medium( mystack ,  mytools);
-			}		
+			if (mystack->stack_a[i] == mystack->stack_a[j])
+			{
+				error_medium(mystack, mytools);
+			}
 			else
 				j++;
 		}
@@ -35,7 +35,7 @@ void	check_dip(t_mystack *mystack , t_mytools *mytools)
 	}
 }
 
-void	is_sorted(t_mystack *mystack,t_mytools *mytools)
+void	is_sorted(t_mystack *mystack, t_mytools *mytools)
 {
 	int	i;
 
@@ -52,17 +52,17 @@ void	is_sorted(t_mystack *mystack,t_mytools *mytools)
 	if (i == mystack->len - 1)
 	{
 		mystack->is_sorted = 1;
-	  simple_free( mystack , mytools );
+		simple_free(mystack, mytools);
 	}
 }
 
-int	space_error(char *str )
+int	space_error(char *str)
 {
 	int	i;
 
 	i = 0;
 	if (str[0] == '\0')
-		return 1;
+		return (1);
 	while (str[i])
 	{
 		if (str[i] != ' ')
@@ -72,17 +72,22 @@ int	space_error(char *str )
 	return (1);
 }
 
-void	sign_error(char *str,t_mystack *mystack , t_mytools *mytools)
+void	sign_error(char *str, t_mystack *mystack, t_mytools *mytools)
 {
-	char c = '\0';
-	char s = ' ';
-	int i = 0;
+	char	c;
+	int		i;
+	char	s;
+
+	c = '\0';
+	s = ' ';
+	i = 0;
 	while (str[i])
 	{
 		if ((str[i] == '+' || str[i] == '-') && ((str[i + 1] == c) || (str[i
-					+ 1] == s))){
-			error_normal( mystack ,  mytools );
-					}
+						+ 1] == s)))
+		{
+			error_normal(mystack, mytools);
+		}
 		i++;
 	}
 }

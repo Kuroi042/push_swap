@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:55:20 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/27 22:28:26 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/28 00:46:50 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int	main(int argc, char *argv[])
 		mytools = (t_mytools *)malloc(sizeof(t_mytools));
 		mystack = (t_mystack *)malloc(sizeof(t_mystack));
 		args_parser(argv, mytools, mystack);
-
 		mystack->len = mytools->len;
 		mystack->len_a = mystack->len;
 		mystack->stack_a = malloc(mystack->len * sizeof(int));
@@ -35,16 +34,9 @@ int	main(int argc, char *argv[])
 			mystack->stack_a[i] = ft_atoi_push(mytools->str[i]);
 			i++;
 		}
-		check_dip(mystack ,mytools);
-		is_sorted(mystack,mytools);
-		sorting_machine(mystack,mytools);
-		i = 0;
-while(i < mystack->len){
-	printf("mystack->stack[%d] = %d\n",i,mystack->stack_a[i]);
-	i++;
-}
- 
-
+		check_dip(mystack, mytools);
+		is_sorted(mystack, mytools);
+		sorting_machine(mystack, mytools);
 	}
 }
 
@@ -52,27 +44,21 @@ void	sorting_machine(t_mystack *mystack, t_mytools *mytools)
 {
 	if (mystack->is_sorted == 0)
 	{
-		if (mystack->len == 2){
-			sort_two(mystack);
-	vree_stack( mystack, mytools);
+		if (mystack->len == 2)
+			sort_two(mystack, mytools);
+		else if (mystack->len == 3)
+		{
+			sort_three_one(mystack);
+			vree_stack(mystack, mytools);
 		}
-		else if (mystack->len == 3){
-			sort_three(mystack);
-			vree_stack( mystack, mytools);
-		}
-		else if (mystack->len == 4){
-			sort_four(mystack);
-		vree_stack( mystack, mytools);
-		
-		}
-		else if (mystack->len == 5){
+		else if (mystack->len == 4)
+			sort_four(mystack, mytools);
+		else if (mystack->len == 5)
+		{
 			sort_cinq(mystack);
-			 vree_stack( mystack, mytools);
+			vree_stack(mystack, mytools);
 		}
-		else if (mystack->len > 5){
-			sorting_100(mystack);	
-			vree_stack( mystack, mytools);
-			
-	}
+		else if (mystack->len > 5)
+			sorting_100(mystack, mytools);
 	}
 }

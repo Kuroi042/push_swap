@@ -95,7 +95,7 @@ long	calculate_number(char *str, int sign)
 {
 	size_t	i;
 	long	nbr;
-	int	digit; 
+	int		digit;
 
 	nbr = 0;
 	i = 0;

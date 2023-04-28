@@ -6,37 +6,37 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:56:47 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/27 22:29:07 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/28 00:49:53 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sorting_100(t_mystack *mystack)
+void	sorting_100(t_mystack *mystack, t_mytools*mytools)
 {
 	int	*s;
 	int	i;
 	int	j;
 
 	i = 0;
-	mystack->temparr = ft_calloc(sizeof(int), mystack->len);
+	mystack->temparr = malloc(sizeof(int) * mystack->len);
 	ft_memcpy(mystack->temparr, mystack->stack_a, sizeof(int) * mystack->len);
 	simplesorting(mystack, mystack->temparr);
 	s = finder(mystack);
- 	range(mystack, s);	
- 	free(s);
+	range(mystack, s);
+	free(s);
 	return_b(mystack);
-				// while(1){}
-	
+	vree_stack(mystack, mytools);
 }
 
 int	*finder(t_mystack *mystack)
 {
 	int	t;
+	int	j;
+	int	i;
 
-
-	int i = 0; // stack_a
-	int j = 0; // temp_stack
+	i = 0;
+	j = 0;
 	t = 0;
 	mystack->index = malloc(sizeof(int) * mystack->len);
 	while (i < mystack->len)
@@ -54,9 +54,7 @@ int	*finder(t_mystack *mystack)
 		}
 		i++;
 	}
-		
 	return (mystack->index);
-	
 }
 
 void	range(t_mystack *mystack, int *s)
@@ -84,7 +82,7 @@ void	range(t_mystack *mystack, int *s)
 		}
 		else
 			rotate_a(mystack);
-	free(mystack->index);
+		free(mystack->index);
 	}
 }
 
@@ -132,7 +130,9 @@ int	smal_index(t_mystack *mystack)
 
 void	return_b(t_mystack *mystack)
 {
-	int i = 0;
+	int	i;
+
+	i = 0;
 	while (mystack->len_b)
 	{
 		if (big_index(mystack) == 0)
