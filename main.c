@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:55:20 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/28 14:47:13 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/28 19:23:55 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,8 @@ int	main(int argc, char *argv[])
 		mystack->stack_b = malloc(mystack->len * sizeof(int));
 		while (i < mystack->len)
 		{
-<<<<<<< HEAD
-			mystack->stack_a[i] = ft_atoi_push(mytools->str[i], mystack,
-					mytools);
-=======
-			mystack->stack_a[i] = ft_atoi_push(mytools->str[i],mytools , mystack);
->>>>>>> 2011d33aad77110708109e9bc03451b0abcc59da
+			mystack->stack_a[i] = ft_atoi_push(mytools->str[i],
+					mytools, mystack);
 			i++;
 		}
 		check_dip(mystack, mytools);

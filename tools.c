@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:56:53 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/28 14:45:59 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/28 19:23:00 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,8 @@ size_t	ft_strlenget(char *str)
 	return (i);
 }
 
-<<<<<<< HEAD
-int	ft_atoi_push(char *str, t_mystack *mystack, t_mytools *mytools)
-=======
-int	ft_atoi_push(char *str , t_mytools *mytools , t_mystack *mystack)
->>>>>>> 2011d33aad77110708109e9bc03451b0abcc59da
+int	ft_atoi_push(char *str, t_mytools *mytools, t_mystack *mystack)
+
 {
 	size_t	i;
 	int		sign;
@@ -91,20 +88,12 @@ int	ft_atoi_push(char *str , t_mytools *mytools , t_mystack *mystack)
 	}
 	else if (str[i] == '+' && str[i + 1] != ' ')
 		i++;
-<<<<<<< HEAD
-	nbr = calculate_number(str + i, sign, mystack, mytools);
+	nbr = calculate_number(str + i, sign, mytools, mystack);
 	return (nbr);
 }
 
-long	calculate_number(char *str, int sign, t_mystack *mystack,
-		t_mytools *mytools)
-=======
-	nbr = calculate_number(str + i, sign, mytools , mystack);
-	return (nbr);
-}
-
-long	calculate_number(char *str, int sign, t_mytools *mytools , t_mystack *mystack)
->>>>>>> 2011d33aad77110708109e9bc03451b0abcc59da
+long	calculate_number(char *str, int sign, t_mytools *mytools,
+		t_mystack *mystack)
 {
 	size_t	i;
 	long	nbr;
@@ -119,19 +108,12 @@ long	calculate_number(char *str, int sign, t_mytools *mytools , t_mystack *mysta
 			digit = str[i] - '0';
 			nbr = nbr * 10 + digit;
 			if ((sign * nbr) > INT_MAX || (sign * nbr) < INT_MIN)
-<<<<<<< HEAD
 				error_medium(mystack, mytools);
 		}
 		else
 		{
 			error_medium(mystack, mytools);
 		}
-=======
-				 	error_medium( mystack,  mytools);
-		}
-		else
-			error_medium( mystack,  mytools);
->>>>>>> 2011d33aad77110708109e9bc03451b0abcc59da
 		i++;
 	}
 	return (nbr * sign);
