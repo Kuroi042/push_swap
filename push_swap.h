@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:55:12 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/28 00:40:59 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/28 16:06:46 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,15 +69,13 @@ int			big_index(t_mystack *mystack);
 int			smal_index(t_mystack *mystack);
 void		return_b(t_mystack *mystack);
 void		vree_stack(t_mystack *mystack, t_mytools *mytools);
-void		vree_tools(t_mytools *mytools);
 void		mymapfree(char **map, t_mytools *mytools);
-int			ft_atoi_push(char *str);
 void		sign_error(char *str, t_mystack *mystack, t_mytools *mytools);
 void		sort_four(t_mystack *mystack, t_mytools *mytools);
 void		sort_two(t_mystack *mystack, t_mytools *mytools);
 void		sorting_machine(t_mystack *mystack, t_mytools *mytools);
-long		calculate_number(char *str, int sign);
-int			ft_atoi_push(char *str);
+long		calculate_number(char *str, int sign,t_mystack *mystack , t_mytools *mytools);
+int			ft_atoi_push(char *str , t_mystack *mystack , t_mytools *mytools);
 void		error_normal(t_mystack *mystack, t_mytools *mytools);
 void		error_medium(t_mystack *mystack, t_mytools *mytools);
 void		simple_free(t_mystack *mystack, t_mytools *mytools);

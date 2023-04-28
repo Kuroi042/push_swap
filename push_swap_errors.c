@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:55:08 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/28 00:16:30 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/28 16:17:17 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,38 +56,34 @@ void	is_sorted(t_mystack *mystack, t_mytools *mytools)
 	}
 }
 
-int	space_error(char *str)
+void	simplesorting(t_mystack *mystack, int *arr)
 {
 	int	i;
+	int	j;
+	int	temp;
 
+	temp = 0;
 	i = 0;
-	if (str[0] == '\0')
-		return (1);
-	while (str[i])
+	while (i < mystack->len - 1)
 	{
-		if (str[i] != ' ')
-			return (0);
-		i++;
-	}
-	return (1);
-}
-
-void	sign_error(char *str, t_mystack *mystack, t_mytools *mytools)
-{
-	char	c;
-	int		i;
-	char	s;
-
-	c = '\0';
-	s = ' ';
-	i = 0;
-	while (str[i])
-	{
-		if ((str[i] == '+' || str[i] == '-') && ((str[i + 1] == c) || (str[i
-						+ 1] == s)))
+		j = 0;
+		while (j < mystack->len - i - 1)
 		{
-			error_normal(mystack, mytools);
+			if (arr[j] > arr[j + 1])
+			{
+				temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+			}
+			j++;
 		}
 		i++;
 	}
+}
+
+void	swap_ab(t_mystack *mystack)
+{
+	swap_a(mystack);
+	swap_b(mystack);
+	printf("ss\n");
 }

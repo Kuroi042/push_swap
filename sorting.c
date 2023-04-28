@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:56:50 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/28 00:51:10 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/28 16:05:46 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,29 +100,4 @@ void	sort_cinq(t_mystack *mystack)
 	sort_three_one(mystack);
 	push_a(mystack);
 	push_a(mystack);
-}
-
-void	simplesorting(t_mystack *mystack, int *arr)
-{
-	int	i;
-	int	j;
-	int	temp;
-
-	temp = 0;
-	i = 0;
-	while (i < mystack->len - 1)
-	{
-		j = 0;
-		while (j < mystack->len - i - 1)
-		{
-			if (arr[j] > arr[j + 1])
-			{
-				temp = arr[j];
-				arr[j] = arr[j + 1];
-				arr[j + 1] = temp;
-			}
-			j++;
-		}
-		i++;
-	}
 }

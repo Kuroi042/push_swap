@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:56:53 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/26 21:38:18 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/28 14:45:59 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ size_t	ft_strlenget(char *str)
 	return (i);
 }
 
-int	ft_atoi_push(char *str)
+int	ft_atoi_push(char *str, t_mystack *mystack, t_mytools *mytools)
 {
 	size_t	i;
 	int		sign;
@@ -87,11 +87,12 @@ int	ft_atoi_push(char *str)
 	}
 	else if (str[i] == '+' && str[i + 1] != ' ')
 		i++;
-	nbr = calculate_number(str + i, sign);
+	nbr = calculate_number(str + i, sign, mystack, mytools);
 	return (nbr);
 }
 
-long	calculate_number(char *str, int sign)
+long	calculate_number(char *str, int sign, t_mystack *mystack,
+		t_mytools *mytools)
 {
 	size_t	i;
 	long	nbr;
@@ -106,15 +107,11 @@ long	calculate_number(char *str, int sign)
 			digit = str[i] - '0';
 			nbr = nbr * 10 + digit;
 			if ((sign * nbr) > INT_MAX || (sign * nbr) < INT_MIN)
-			{
-				write(2, "Error\n", 6);
-				exit(1);
-			}
+				error_medium(mystack, mytools);
 		}
 		else
 		{
-			write(2, "Error\n", 6);
-			exit(1);
+			error_medium(mystack, mytools);
 		}
 		i++;
 	}

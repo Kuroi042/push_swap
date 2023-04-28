@@ -6,13 +6,13 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:56:47 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/28 00:49:53 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/28 16:07:30 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sorting_100(t_mystack *mystack, t_mytools*mytools)
+void	sorting_100(t_mystack *mystack, t_mytools *mytools)
 {
 	int	*s;
 	int	i;
@@ -101,27 +101,6 @@ int	big_index(t_mystack *mystack)
 		{
 			j = i;
 			biggest_num = mystack->stack_b[i];
-		}
-		i++;
-	}
-	return (j);
-}
-
-int	smal_index(t_mystack *mystack)
-{
-	int	smal_num;
-	int	i;
-	int	j;
-
-	j = 0;
-	i = 0;
-	smal_num = mystack->stack_a[0];
-	while (i < mystack->len_a)
-	{
-		if (mystack->stack_a[i] < smal_num)
-		{
-			j = i;
-			smal_num = mystack->stack_a[i];
 		}
 		i++;
 	}

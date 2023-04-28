@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:55:36 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/28 00:13:08 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/28 16:06:22 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,6 @@ void	vree_stack(t_mystack *mystack, t_mytools *mytools)
 	free(mystack->stack_b);
 	free(mystack->temparr);
 	free(mystack);
-}
-
-void	vree_tools(t_mytools *mytools)
-{
 }
 
 void	mymapfree(char **map, t_mytools *mytools)
