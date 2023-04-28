@@ -31,8 +31,12 @@ int	main(int argc, char *argv[])
 		mystack->stack_b = malloc(mystack->len * sizeof(int));
 		while (i < mystack->len)
 		{
+<<<<<<< HEAD
 			mystack->stack_a[i] = ft_atoi_push(mytools->str[i], mystack,
 					mytools);
+=======
+			mystack->stack_a[i] = ft_atoi_push(mytools->str[i],mytools , mystack);
+>>>>>>> 2011d33aad77110708109e9bc03451b0abcc59da
 			i++;
 		}
 		check_dip(mystack, mytools);

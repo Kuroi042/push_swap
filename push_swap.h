@@ -70,12 +70,20 @@ int			smal_index(t_mystack *mystack);
 void		return_b(t_mystack *mystack);
 void		vree_stack(t_mystack *mystack, t_mytools *mytools);
 void		mymapfree(char **map, t_mytools *mytools);
+<<<<<<< HEAD
+=======
+int			ft_atoi_push(char *str , t_mytools *mytools , t_mystack *mystack);
+>>>>>>> 2011d33aad77110708109e9bc03451b0abcc59da
 void		sign_error(char *str, t_mystack *mystack, t_mytools *mytools);
 void		sort_four(t_mystack *mystack, t_mytools *mytools);
 void		sort_two(t_mystack *mystack, t_mytools *mytools);
 void		sorting_machine(t_mystack *mystack, t_mytools *mytools);
+<<<<<<< HEAD
 long		calculate_number(char *str, int sign,t_mystack *mystack , t_mytools *mytools);
 int			ft_atoi_push(char *str , t_mystack *mystack , t_mytools *mytools);
+=======
+long		calculate_number(char *str, int sign, t_mytools *mytools , t_mystack *mystack);
+>>>>>>> 2011d33aad77110708109e9bc03451b0abcc59da
 void		error_normal(t_mystack *mystack, t_mytools *mytools);
 void		error_medium(t_mystack *mystack, t_mytools *mytools);
 void		simple_free(t_mystack *mystack, t_mytools *mytools);
