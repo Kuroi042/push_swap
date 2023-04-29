@@ -6,37 +6,36 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 02:58:48 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/28 00:52:57 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/28 21:30:01 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *first, char const *last)
+char	*ft_strjoin(char *s1, char *s2)
 {
-	char	*s1;
-	char	*s2;
 	size_t	i;
 	char	*p;
+	size_t	len_s1;
+	size_t	len_s2;
 
-	s1 = (char *)first;
-	s2 = (char *)last;
+	len_s1 = ft_strlen(s1);
+	len_s2 = ft_strlen(s2);
 	i = 0;
-	if (!s1 || !s2)
-		return (NULL);
-	p = (char *)ft_calloc(((ft_strlen(s1) + ft_strlen(s2)) + 1), sizeof(char));
+	p = (char *)ft_calloc(((len_s1 + len_s2) + 1), sizeof(char));
 	if (p == NULL)
 		return (NULL);
-	while (i < ft_strlen(s1))
+	while (i < len_s1)
 	{
 		p[i] = s1[i];
 		i++;
 	}
 	i = 0;
-	while (i <= ft_strlen(s2))
+	while (i <= len_s2)
 	{
-		p[i + ft_strlen(s1)] = s2[i];
+		p[i + len_s1] = s2[i];
 		i++;
 	}
+	free(s1);
 	return (p);
 }

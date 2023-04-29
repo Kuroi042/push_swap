@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 02:10:04 by mbouderr          #+#    #+#             */
-/*   Updated: 2022/10/27 02:10:05 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/28 21:26:37 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,17 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	char	*cal;
+	char	*ptr;
+	size_t	i;
 
-	cal = malloc(count * size);
-	if (!cal)
+	i = 0;
+	ptr = malloc(size * count);
+	if (!ptr)
 		return (NULL);
-	ft_bzero(cal, count * size);
-	return (cal);
+	while (i < (count * size))
+	{
+		ptr[i] = '\0';
+		i++;
+	}
+	return (ptr);
 }

@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:55:18 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/28 16:15:47 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/28 23:40:22 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ void	args_parser(char **argv, t_mytools *mytools, t_mystack *mystack)
 			error_normal(mystack, mytools);
 		}
 		sign_error(argv[i], mystack, mytools);
-		mytools->join = ft_strjoinpush(mytools->join, lol);
-		mytools->join = ft_strjoinpush(mytools->join, argv[i]);
+		mytools->join = ft_strjoin(mytools->join, lol);
+		mytools->join = ft_strjoin(mytools->join, argv[i]);
 		i++;
 	}
 	free(lol);

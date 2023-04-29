@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:55:08 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/28 16:17:17 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/29 00:15:21 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,9 +81,3 @@ void	simplesorting(t_mystack *mystack, int *arr)
 	}
 }
 
-void	swap_ab(t_mystack *mystack)
-{
-	swap_a(mystack);
-	swap_b(mystack);
-	printf("ss\n");
-}
