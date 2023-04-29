@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   instruction_bonus.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/29 22:17:25 by mbouderr          #+#    #+#             */
+/*   Updated: 2023/04/29 22:18:08 by mbouderr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap_bonus.h"
 
 void	swap_a(t_mystack *mystack)
@@ -15,7 +27,6 @@ void	swap_a(t_mystack *mystack)
 		temp = mystack->stack_a[0];
 		mystack->stack_a[0] = mystack->stack_a[1];
 		mystack->stack_a[1] = temp;
-		//printf("sa\n");
 	}
 }
 
@@ -34,11 +45,9 @@ void	swap_b(t_mystack *mystack)
 		temp = mystack->stack_b[0];
 		mystack->stack_b[0] = mystack->stack_b[1];
 		mystack->stack_b[1] = temp;
-		//printf("sb\n");
-	}//
+	}
 }
 
-//push to_STACK _A
 void	push_a(t_mystack *mystack)
 {
 	int	i;
@@ -59,7 +68,6 @@ void	push_a(t_mystack *mystack)
 			mystack->stack_b[i] = mystack->stack_b[i + 1];
 			i++;
 		}
-		//printf("pa\n");
 	}
 }
 
@@ -83,7 +91,6 @@ void	push_b(t_mystack *mystack)
 			mystack->stack_a[i] = mystack->stack_a[i + 1];
 			i++;
 		}
-		//printf("pb\n");
 	}
 }
 
@@ -102,80 +109,5 @@ void	rotate_a(t_mystack *mystack)
 			i++;
 		}
 		mystack->stack_a[mystack->len_a - 1] = azero;
-		//printf("ra\n");
 	}
-}
-
-void	r_rotate_a(t_mystack *mystack)
-{
-	int	i;
-	int	rotate;
-
-	i = mystack->len_a;
-	rotate = mystack->stack_a[mystack->len_a - 1];
-	while (i > 0)
-	{
-		mystack->stack_a[i] = mystack->stack_a[i - 1];
-		i--;
-	}
-	mystack->stack_a[0] = rotate;
-	//printf("rra\n");
-}
-
-void	r_rotate_b(t_mystack *mystack)
-{
-	int	i;
-	int	rotate;
-
-	i = mystack->len_b;
-	rotate = mystack->stack_b[mystack->len_b - 1];
-	while (i > 0)
-	{
-		mystack->stack_b[i] = mystack->stack_b[i - 1];
-		i--;
-	}
-	mystack->stack_b[0] = rotate;
-	//printf("rrb\n");
-}
-
-void	rotate_b(t_mystack *mystack)
-{
-	int	i;
-	int	bzerow;
-
-	if (mystack->stack_b)
-	{
-		i = 0;
-		bzerow = mystack->stack_b[0];
-		while (i < mystack->len_b)
-		{
-			mystack->stack_b[i] = mystack->stack_b[i + 1];
-			i++;
-		}
-		mystack->stack_b[mystack->len_b - 1] = bzerow;
-		//printf("rb\n");
-	}
-}
-
-void	rotate_ab(t_mystack *mystack)
-{
-	rotate_a(mystack);
-	rotate_b(mystack);
-	//printf("rab\n");
-}
-
-
-
-
-
-
-
-
-
-
-void	swap_ab(t_mystack *mystack)
-{
-	swap_a(mystack);
-	swap_b(mystack);
-	//printf("ss\n");
 }

@@ -1,27 +1,39 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap_errors_bonus.c                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/29 21:49:19 by mbouderr          #+#    #+#             */
+/*   Updated: 2023/04/29 21:53:33 by mbouderr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap_bonus.h"
 
 void	args_parser(char **argv, t_mytools *mytools, t_mystack *mystack)
 {
 	int		i;
 	int		j;
-	char	*lol;
+	char	*space;
 
 	i = 0;
 	j = 0;
 	mytools->join = ft_strdup(" ");
-	lol = ft_strdup(" ");
-	while (argv[i]!= '\0')
+	space = ft_strdup(" ");
+	while (argv[i] != '\0')
 	{
 		if (space_error(argv[i]))
 		{
 			error_normal_bonus(mystack, mytools);
 		}
 		sign_error(argv[i], mystack, mytools);
-		mytools->join = ft_strjoin(mytools->join, lol);
+		mytools->join = ft_strjoin(mytools->join, space);
 		mytools->join = ft_strjoin(mytools->join, argv[i]);
 		i++;
 	}
-	free(lol);
+	free(space);
 	mytools->str = ft_split(mytools->join, ' ');
 	free(mytools->join);
 	counter(mytools);
@@ -63,12 +75,6 @@ int	space_error(char *str)
 	return (1);
 }
 
-void	counter(t_mytools *mytools)
-{
-	while (mytools->str[mytools->len])
-		mytools->len++;
-}
-
 void	is_sorted_bonus(t_mystack *mystack, t_mytools *mytools)
 {
 	int	i;
@@ -79,16 +85,15 @@ void	is_sorted_bonus(t_mystack *mystack, t_mytools *mytools)
 		if (mystack->stack_a[i] > mystack->stack_a[i + 1])
 		{
 			mystack->is_sorted = 0;
-			break;
+			break ;
 		}
 		i++;
 	}
-	//sorted
-	if (i == mystack->len - 1  )
-	{	
+	if (i == mystack->len - 1)
+	{
 		mystack->is_sorted = 1;
-		}
 	}
+}
 
 void	check_dip_bonus(t_mystack *mystack, t_mytools *mytools)
 {
@@ -107,9 +112,8 @@ void	check_dip_bonus(t_mystack *mystack, t_mytools *mytools)
 				error_medium_bonus(mystack, mytools);
 			}
 			else
-		 	j++;
+				j++;
 		}
 		i++;
 	}
 }
-

@@ -9,7 +9,7 @@ FT_PRINTF_DIR = ft_printf
 FT_PRINTF =  $(FT_PRINTF_DIR)/ft_printf.a
 
 CC = cc
-SRC_PS_BONUS = main_bonus.c push_swap_errors_bonus.c error_bonus.c tools_bonus.c instruction_bonus.c
+SRC_PS_BONUS = main_bonus.c push_swap_errors_bonus.c error_bonus.c tools_bonus.c instruction_bonus.c instruction_bonus2.c
 SRC_PS = main.c push_swap_errors.c instructions_S.c sorting.c range.c ft_free.c tools.c parsing.c tools_2.c
 OBJS_C = ${SRC_PS:.c=.o}
 OBJS_C_BONUS = ${SRC_PS_BONUS:.c=.o}
@@ -49,5 +49,5 @@ fclean_bonus : clean_bonus
 	@make -C $(FT_PRINTF_DIR) fclean_bonus
 
 re : fclean all bonus
-#xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
 

@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:55:08 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/29 17:26:14 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/29 22:20:39 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	check_dip(t_mystack *mystack, t_mytools *mytools)
 				error_medium(mystack, mytools);
 			}
 			else
-		 	j++;
+		j++;
 		}
 		i++;
 	}
@@ -80,4 +80,3 @@ void	simplesorting(t_mystack *mystack, int *arr)
 		i++;
 	}
 }
-

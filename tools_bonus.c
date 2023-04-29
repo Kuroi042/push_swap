@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   tools_bonus.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/29 21:51:12 by mbouderr          #+#    #+#             */
+/*   Updated: 2023/04/29 21:53:38 by mbouderr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap_bonus.h"
-int	ft_atoi_push_bonus(char *str, t_mytools *mytools, t_mystack *mystack)
 
+int	ft_atoi_push_bonus(char *str, t_mytools *mytools, t_mystack *mystack)
 {
 	size_t	i;
 	int		sign;
@@ -48,4 +59,10 @@ long	calculate_number_bonus(char *str, int sign, t_mytools *mytools,
 		i++;
 	}
 	return (nbr * sign);
+}
+
+void	counter(t_mytools *mytools)
+{
+	while (mytools->str[mytools->len])
+		mytools->len++;
 }
