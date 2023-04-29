@@ -10,11 +10,11 @@ void	args_parser(char **argv, t_mytools *mytools, t_mystack *mystack)
 	j = 0;
 	mytools->join = ft_strdup(" ");
 	lol = ft_strdup(" ");
-	while (argv[i])
+	while (argv[i]!= '\0')
 	{
 		if (space_error(argv[i]))
 		{
-			error_normal(mystack, mytools);
+			error_normal_bonus(mystack, mytools);
 		}
 		sign_error(argv[i], mystack, mytools);
 		mytools->join = ft_strjoin(mytools->join, lol);
@@ -41,7 +41,7 @@ void	sign_error(char *str, t_mystack *mystack, t_mytools *mytools)
 		if ((str[i] == '+' || str[i] == '-') && ((str[i + 1] == c) || (str[i
 						+ 1] == s)))
 		{
-			error_normal(mystack, mytools);
+			error_normal_bonus(mystack, mytools);
 		}
 		i++;
 	}
@@ -69,7 +69,7 @@ void	counter(t_mytools *mytools)
 		mytools->len++;
 }
 
-void	is_sorted(t_mystack *mystack, t_mytools *mytools)
+void	is_sorted_bonus(t_mystack *mystack, t_mytools *mytools)
 {
 	int	i;
 
@@ -79,14 +79,37 @@ void	is_sorted(t_mystack *mystack, t_mytools *mytools)
 		if (mystack->stack_a[i] > mystack->stack_a[i + 1])
 		{
 			mystack->is_sorted = 0;
-			break ;
+			break;
 		}
 		i++;
 	}
-	if (i == mystack->len - 1)
-	{
+	//sorted
+	if (i == mystack->len - 1  )
+	{	
 		mystack->is_sorted = 1;
-         printf("OK\n");
-		simple_free(mystack, mytools);
+		}
+	}
+
+void	check_dip_bonus(t_mystack *mystack, t_mytools *mytools)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (i != mystack->len)
+	{
+		j = i + 1;
+		while (j != mystack->len)
+		{
+			if (mystack->stack_a[i] == mystack->stack_a[j])
+			{
+				error_medium_bonus(mystack, mytools);
+			}
+			else
+		 	j++;
+		}
+		i++;
 	}
 }
+

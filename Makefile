@@ -48,6 +48,6 @@ fclean_bonus : clean_bonus
 	@make -C $(LIBFT_DIR) fclean_bonus
 	@make -C $(FT_PRINTF_DIR) fclean_bonus
 
-re: fclean all
+re : fclean all bonus
 #xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 

@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:55:20 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/28 19:23:55 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/29 17:31:36 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,23 @@ int	main(int argc, char *argv[])
 		mystack->len_a = mystack->len;
 		mystack->stack_a = malloc(mystack->len * sizeof(int));
 		mystack->stack_b = malloc(mystack->len * sizeof(int));
-		while (i < mystack->len)
+
+			while (i < mystack->len)
 		{
 			mystack->stack_a[i] = ft_atoi_push(mytools->str[i],
 					mytools, mystack);
 			i++;
 		}
+		i = 0;
+		
 		check_dip(mystack, mytools);
+				while (i < mystack->len)
+		{
+			printf("%d\n", mystack->stack_a[i]);
+				
+			i++;
+		}
+		
 		is_sorted(mystack, mytools);
 		sorting_machine(mystack, mytools);
 	}

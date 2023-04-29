@@ -1,85 +1,100 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/29 20:59:15 by mbouderr          #+#    #+#             */
+/*   Updated: 2023/04/29 21:38:03 by mbouderr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap_bonus.h"
 #include <string.h>
-int main(int argc , char *argv[])
-{ 
-    int			i;
+
+int	main(int argc, char *argv[])
+{
+	int			i;
 	t_mytools	*mytools;
-    t_mystack	*mystack;
-    if (argc > 1)
+	t_mystack	*mystack;
+	int			nread;
+
+	if (argc > 1)
 	{
 		i = 0;
 		argv++;
 		mytools = (t_mytools *)malloc(sizeof(t_mytools));
 		mystack = (t_mystack *)malloc(sizeof(t_mystack));
-        args_parser(argv, mytools, mystack);
-        mystack->len = mytools->len;
+		args_parser(argv, mytools, mystack);
+		mystack->len = mytools->len;
 		mystack->len_a = mystack->len;
-        mystack->stack_a = malloc(mystack->len * sizeof(int));
+		mystack->stack_a = malloc(mystack->len * sizeof(int));
 		mystack->stack_b = malloc(mystack->len * sizeof(int));
-        while (i < mystack->len)
+		while (i < mystack->len)
 		{
-			mystack->stack_a[i] = ft_atoi_push(mytools->str[i],
+			mystack->stack_a[i] = ft_atoi_push_bonus(mytools->str[i],
 					mytools, mystack);
 			i++;
 		}
-        // i = 0;
-        // while(i < mystack->len){
-        //         printf("mystack->stack[%d] = %d\n", i , mystack->stack_a[i]);
-        //         i++;
-        // }
-    char str[1024];
- while (1)
-        {
-            int nread = read(STDIN_FILENO, str, 1024);
-            if (nread == -1)
-            {
-                perror("read error");
-                exit(1);
-            }
-                else if (nread == 0)
-    {
-        // End of file reached, exit the loop
-        break;
-    }
-            else if (nread > 0)
-            {
-                //Remove newline character if present
-                if (str[nread - 1] == '\n')
-                {
-                    str[nread - 1] = '\0';
-                    nread--;
-                }
-                // Null-terminate the input string
-                str[nread] = '\0';
-                if (strcmp(str, "sa\n") == 0)
-                    swap_a(mystack);
-                else if (strcmp(str, "ra\n") == 0)
-                    rotate_a(mystack);
-                else if (strcmp(str, "rra\n") == 0)
-                    r_rotate_a(mystack);   
-                else if (strcmp(str, "pa\n") == 0)
-                    push_a(mystack);   
-                else if (strcmp(str, "pb\n") == 0)
-                    push_b(mystack);    
-                  else if (strcmp(str, "rb\n") == 0)
-                    rotate_b(mystack); 
-                  else if (strcmp(str, "rrb\n") == 0)
-                    r_rotate_a(mystack);   
-                else if (strcmp(str, "ss\n") == 0)
-                    swap_ab(mystack);   
-                    else if (strcmp(str, "rab\n") == 0)
-                    rotate_ab(mystack);   
-                    else if (strcmp(str, "sb\n") == 0)
-                    swap_b(mystack);  
-                else
-                {
-                    printf("Error\n");
-                }
-            }
-        }
-        is_sorted( mystack, mytools);
-        if(mystack->is_sorted == 1)
-            printf("OK\n");
-    }
+		check_dip_bonus(mystack, mytools);
+		while_function(mytools, mystack);
+	}
 }
 
+void	while_function(t_mytools *mytools, t_mystack *mystack)
+{
+	int		nread;
+	char	*str;
+
+	str = malloc(1);
+	while (1)
+	{
+		nread = read(STDIN_FILENO, str, 5);
+		if (nread == -1)
+			error_medium_bonus(mystack, mytools);
+		else if (nread == 0)
+			break ;
+		else if (nread > 0)
+			compare_str(nread, str, mystack, mytools);
+	}
+	is_sorted_bonus(mystack, mytools);
+	if (mystack->is_sorted == 1 && mystack->len_b == 0)
+	{
+		printf("OK\n");
+		simple_free_bonus(mystack, mytools);
+	}
+	else if (mystack->is_sorted == 0 || mystack->len_b != 0)
+	{
+		printf("KO\n");
+		simple_free_bonus(mystack, mytools);
+	}
+}
+
+void	compare_str(int nread, char *str, t_mystack *mystack,
+		t_mytools *mytools)
+{
+	str[nread] = '\0';
+	if (ft_strncmp(str, "sa", 2) == 0)
+		swap_a(mystack);
+	else if (ft_strncmp(str, "ra", 2) == 0)
+		rotate_a(mystack);
+	else if (ft_strncmp(str, "rra", 3) == 0)
+		r_rotate_a(mystack);
+	else if (ft_strncmp(str, "pa", 2) == 0)
+		push_a(mystack);
+	else if (ft_strncmp(str, "pb", 2) == 0)
+		push_b(mystack);
+	else if (ft_strncmp(str, "rb", 2) == 0)
+		rotate_b(mystack);
+	else if (ft_strncmp(str, "rrb", 3) == 0)
+		r_rotate_b(mystack);
+	else if (ft_strncmp(str, "ss", 2) == 0)
+		swap_ab(mystack);
+	else if (ft_strncmp(str, "rab", 3) == 0)
+		rotate_ab(mystack);
+	else if (ft_strncmp(str, "sb", 2) == 0)
+		swap_b(mystack);
+	else
+		error_medium_bonus(mystack, mytools);
+}

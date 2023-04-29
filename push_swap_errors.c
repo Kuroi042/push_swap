@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:55:08 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/29 00:15:21 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/29 17:26:14 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@ void	check_dip(t_mystack *mystack, t_mytools *mytools)
 
 	i = 0;
 	j = 0;
-	while (mystack->stack_a[i])
+	while (i != mystack->len)
 	{
 		j = i + 1;
-		while (mystack->stack_a[j])
+		while (j != mystack->len)
 		{
 			if (mystack->stack_a[i] == mystack->stack_a[j])
 			{
 				error_medium(mystack, mytools);
 			}
 			else
-				j++;
+		 	j++;
 		}
 		i++;
 	}
