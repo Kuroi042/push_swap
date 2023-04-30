@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:56:47 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/30 00:23:52 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/30 16:09:12 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	sorting_100(t_mystack *mystack, t_mytools *mytools)
 	return_b(mystack);
 	vree_stack(mystack, mytools);
 }
+
 
 int	*finder(t_mystack *mystack)
 {

@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 22:17:25 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/29 23:56:41 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/30 17:23:57 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,8 @@ void	swap_a(t_mystack *mystack)
 	int	temp;
 
 	i = 0;
-	if (mystack->len_a == 0 || mystack->len_a == 1)
-	{
-	}
+	if (mystack->len_a == 0 )
+		return;
 	else if (mystack->len_a > 1)
 	{
 		temp = 0;
@@ -37,8 +36,7 @@ void	swap_b(t_mystack *mystack)
 
 	i = 0;
 	if (mystack->len_b == 0 || mystack->len_b == 1)
-	{
-	}
+		return;
 	else if (mystack->len_b > 1)
 	{
 		temp = 0;
@@ -78,9 +76,7 @@ void	push_b(t_mystack *mystack)
 	int	i;
 
 	if (mystack->len_a == 0)
-	{
-		return ;
-	}
+		return;
 	if (mystack->stack_a)
 	{
 		mystack->len_b++;
@@ -105,7 +101,10 @@ void	rotate_a(t_mystack *mystack)
 	int	i;
 	int	azero;
 
-	if (mystack->stack_a)
+	if(mystack->len_a == 1 || mystack->len_a == 0)
+		return;
+	
+	else if (mystack->stack_a)
 	{
 		i = 0;
 		azero = mystack->stack_a[0];

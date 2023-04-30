@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 20:59:15 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/30 00:24:56 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/30 18:39:08 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,64 +38,62 @@ int	main(int argc, char *argv[])
 		}
 		check_dip_bonus(mystack, mytools);
 		while_function(mytools, mystack);
+
 	}
 }
 
 void	while_function(t_mytools *mytools, t_mystack *mystack)
 {
-	int		nread;
 	char	*str;
 
 	str = malloc(1);
-	while (1)
-	{
-		nread = read(STDIN_FILENO, str, 5);
-		if (nread == -1)
-			error_medium_bonus(mystack, mytools);
-		else if (nread == 0)
-			break ;
-		else if (nread > 0)
-			compare_str(nread, str, mystack, mytools);
-	}
+	compare_str(str,  mystack, mytools);
+			free(str);
 	is_sorted_bonus(mystack);
 	if (mystack->is_sorted == 1 && mystack->len_b == 0)
 	{
-		printf("OK\n");
-		free(str);
+		write(1,"OK\n",3);
 		simple_free_bonus(mystack, mytools);
+		
 	}
 	else if (mystack->is_sorted == 0 || mystack->len_b != 0)
 	{
-		printf("KO\n");
-		free(str);
+		write(1,"KO\n",3);
 		simple_free_bonus(mystack, mytools);
 	}
 }
 
-void	compare_str(int nread, char *str, t_mystack *mystack,
+void	compare_str(char *str, t_mystack *mystack,
 		t_mytools *mytools)
 {
-	str[nread] = '\0';
-	if (ft_strncmp(str, "sa", 2) == 0)
+		while (1)
+	{
+	str = get_next_line(0);
+		if(!str)
+			break;
+	else if (ft_strncmp(str, "sa\n", 3) == 0)
 		swap_a(mystack);
-	else if (ft_strncmp(str, "ra", 2) == 0)
+	else if (ft_strncmp(str, "ra\n", 3) == 0)
 		rotate_a(mystack);
-	else if (ft_strncmp(str, "rra", 3) == 0)
+	else if (ft_strncmp(str, "rra\n", 4) == 0)
 		r_rotate_a(mystack);
-	else if (ft_strncmp(str, "pa", 2) == 0)
+	else if (ft_strncmp(str, "pa\n", 3) == 0)
 		push_a(mystack);
-	else if (ft_strncmp(str, "pb", 2) == 0)
+	else if (ft_strncmp(str, "pb\n", 3) == 0)
 		push_b(mystack);
-	else if (ft_strncmp(str, "rb", 2) == 0)
+	else if (ft_strncmp(str, "rb\n", 3) == 0)
 		rotate_b(mystack);
-	else if (ft_strncmp(str, "rrb", 3) == 0)
+	else if (ft_strncmp(str, "rrb\n", 4) == 0)
 		r_rotate_b(mystack);
-	else if (ft_strncmp(str, "ss", 2) == 0)
+	else if (ft_strncmp(str, "ss\n", 3) == 0)
 		swap_ab(mystack);
-	else if (ft_strncmp(str, "rab", 3) == 0)
+	else if (ft_strncmp(str, "rrr\n", 4) == 0)
+		r_rotate_ab(mystack);
+	else if (ft_strncmp(str, "rr\n", 3) == 0)
 		rotate_ab(mystack);
-	else if (ft_strncmp(str, "sb", 2) == 0)
+	else if (ft_strncmp(str, "sb\n", 3) == 0)
 		swap_b(mystack);
 	else
 		error_medium_bonus(mystack, mytools);
+}
 }

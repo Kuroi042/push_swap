@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 20:18:32 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/30 00:25:07 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/30 18:23:45 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 #define PUSH_SWAP_BONUS_H
 # include "libft/libft.h"
-# include <stdio.h>
+#include "ft_printf/ft_printf.h"
+#include "gnl/get_next_line.h"
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
@@ -62,7 +63,8 @@ void		rotate_b(t_mystack *mystack);//
 void		rotate_ab(t_mystack *mystack);//
 void		r_rotate_a(t_mystack *mystack);//
 void		r_rotate_b(t_mystack *mystack);//
-void 		compare_str( int nread ,char *str ,t_mystack *mystack , t_mytools *mytools);
+void		r_rotate_ab(t_mystack *mystack);
+void 		compare_str( char *str ,t_mystack *mystack , t_mytools *mytools);
 void		while_function(t_mytools *mytools, t_mystack *mystack);
 
 

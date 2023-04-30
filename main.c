@@ -6,11 +6,12 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:55:20 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/29 22:19:43 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/30 18:36:09 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 int	main(int argc, char *argv[])
 {
@@ -52,8 +53,9 @@ void	sorting_machine(t_mystack *mystack, t_mytools *mytools)
 			sort_three_one(mystack);
 			vree_stack(mystack, mytools);
 		}
-		else if (mystack->len == 4)
+		else if (mystack->len == 4){
 			sort_four(mystack, mytools);
+		}
 		else if (mystack->len == 5)
 		{
 			sort_cinq(mystack);

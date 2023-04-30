@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 21:51:12 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/29 21:53:38 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/30 16:54:42 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,16 @@ void	counter(t_mytools *mytools)
 {
 	while (mytools->str[mytools->len])
 		mytools->len++;
+}
+
+void	r_rotate_ab(t_mystack *mystack)
+{
+	if(mystack->len_a == 1 || mystack->len_a == 0)
+		return;
+	else if (mystack->len_b == 0 || mystack->len_b == 1)
+		return;
+	else {
+	r_rotate_a(mystack);
+	r_rotate_b(mystack);
+	}
 }

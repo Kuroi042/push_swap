@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:55:12 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/28 23:40:00 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/30 18:22:55 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 # define PUSH_SWAP_H
 # include "libft/libft.h"
+#include "ft_printf/ft_printf.h"
+#include "gnl/get_next_line.h"
 # include <fcntl.h>
 # include <limits.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -55,6 +56,7 @@ void		rotate_b(t_mystack *mystack);
 void		rotate_ab(t_mystack *mystack);
 void		r_rotate_a(t_mystack *mystack);
 void		r_rotate_b(t_mystack *mystack);
+void		r_rotate_ab(t_mystack *mystack);
 void		sort_three_one(t_mystack *mystack);
 void		sort_three_two(t_mystack *mystack);
 void		sort_cinq(t_mystack *mystack);

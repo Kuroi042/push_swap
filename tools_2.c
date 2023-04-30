@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 16:12:27 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/28 16:17:47 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/30 17:19:45 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	r_rotate_a(t_mystack *mystack)
 		i--;
 	}
 	mystack->stack_a[0] = rotate;
-	printf("rra\n");
+	ft_printf("rra\n");
 }
 
 void	r_rotate_b(t_mystack *mystack)
@@ -41,7 +41,7 @@ void	r_rotate_b(t_mystack *mystack)
 		i--;
 	}
 	mystack->stack_b[0] = rotate;
-	printf("rrb\n");
+	ft_printf("rrb\n");
 }
 
 void	rotate_b(t_mystack *mystack)
@@ -59,15 +59,17 @@ void	rotate_b(t_mystack *mystack)
 			i++;
 		}
 		mystack->stack_b[mystack->len_b - 1] = bzerow;
-		printf("rb\n");
+		ft_printf("rb\n");
 	}
 }
 
 void	rotate_ab(t_mystack *mystack)
 {
+		if (mystack->len_b == 0 || mystack->len_a == 0)
+		return;
 	rotate_a(mystack);
 	rotate_b(mystack);
-	printf("rab\n");
+	ft_printf("rr\n");
 }
 
 int	smal_index(t_mystack *mystack)

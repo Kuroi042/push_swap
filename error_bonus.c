@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 22:18:39 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/29 22:18:59 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/30 18:38:22 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,13 @@ void	mymapfree(char **map, t_mytools *mytools)
 
 void	error_medium_bonus(t_mystack *mystack, t_mytools *mytools)
 {
-	write(2, "Error\n", 6);
+	write(2, "Error\n", 10);
 	mymapfree(mytools->str, mytools);
 	free(mystack->stack_a);
 	free(mystack->stack_b);
 	free(mystack);
 	free(mytools);
-	exit(0);
+	exit(1);
 }
 
 void	error_normal_bonus(t_mystack *mystack, t_mytools *mytools)
