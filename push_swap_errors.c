@@ -29,7 +29,7 @@ void	check_dip(t_mystack *mystack, t_mytools *mytools)
 				error_medium(mystack, mytools);
 			}
 			else
-		j++;
+				j++;
 		}
 		i++;
 	}

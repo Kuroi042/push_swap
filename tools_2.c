@@ -65,8 +65,8 @@ void	rotate_b(t_mystack *mystack)
 
 void	rotate_ab(t_mystack *mystack)
 {
-		if (mystack->len_b == 0 || mystack->len_a == 0)
-		return;
+	if (mystack->len_b == 0 || mystack->len_a == 0)
+		return ;
 	rotate_a(mystack);
 	rotate_b(mystack);
 	ft_printf("rr\n");

@@ -12,19 +12,21 @@
 
 #include "push_swap.h"
 
-void swap_a(t_mystack *mystack){
+void	swap_a(t_mystack *mystack)
+{
+	int	temp;
 
- 
-
-if( mystack->len_a == 0 || mystack->len_a == 1){}
-else {
-    int temp = 0;
-    temp = mystack->stack_a[0];
-    mystack->stack_a[0] = mystack->stack_a[1];
-    mystack->stack_a[1] = temp;
-    
-ft_printf("sa\n");
-  }
+	if (mystack->len_a == 0 || mystack->len_a == 1)
+	{
+	}
+	else
+	{
+		temp = 0;
+		temp = mystack->stack_a[0];
+		mystack->stack_a[0] = mystack->stack_a[1];
+		mystack->stack_a[1] = temp;
+		ft_printf("sa\n");
+	}
 }
 
 void	swap_b(t_mystack *mystack)
@@ -33,10 +35,9 @@ void	swap_b(t_mystack *mystack)
 	int	temp;
 
 	i = 0;
-if (mystack->len_b == 0)
-	return;
-		
-	else  if (mystack->len_b > 1)
+	if (mystack->len_b == 0)
+		return ;
+	else if (mystack->len_b > 1)
 	{
 		temp = 0;
 		temp = mystack->stack_b[0];
@@ -100,7 +101,7 @@ void	rotate_a(t_mystack *mystack)
 	int	i;
 	int	azero;
 
-	  if (mystack->stack_a)
+	if (mystack->stack_a)
 	{
 		i = 0;
 		azero = mystack->stack_a[0];

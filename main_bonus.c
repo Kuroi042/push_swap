@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 20:59:15 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/30 18:39:08 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/30 21:05:26 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ int	main(int argc, char *argv[])
 		}
 		check_dip_bonus(mystack, mytools);
 		while_function(mytools, mystack);
-
 	}
 }
 
@@ -47,30 +46,28 @@ void	while_function(t_mytools *mytools, t_mystack *mystack)
 	char	*str;
 
 	str = malloc(1);
-	compare_str(str,  mystack, mytools);
-			free(str);
+	compare_str(str, mystack, mytools);
 	is_sorted_bonus(mystack);
 	if (mystack->is_sorted == 1 && mystack->len_b == 0)
 	{
-		write(1,"OK\n",3);
+		write(1, "OK\n", 3);
 		simple_free_bonus(mystack, mytools);
-		
 	}
 	else if (mystack->is_sorted == 0 || mystack->len_b != 0)
 	{
-		write(1,"KO\n",3);
+		write(1, "KO\n", 3);
 		simple_free_bonus(mystack, mytools);
 	}
 }
 
-void	compare_str(char *str, t_mystack *mystack,
-		t_mytools *mytools)
+void	compare_str(char *str, t_mystack *mystack, t_mytools *mytools)
 {
 		while (1)
 	{
 	str = get_next_line(0);
-		if(!str)
+		if(!str){
 			break;
+		}
 	else if (ft_strncmp(str, "sa\n", 3) == 0)
 		swap_a(mystack);
 	else if (ft_strncmp(str, "ra\n", 3) == 0)
@@ -95,5 +92,7 @@ void	compare_str(char *str, t_mystack *mystack,
 		swap_b(mystack);
 	else
 		error_medium_bonus(mystack, mytools);
+
 }
 }
+

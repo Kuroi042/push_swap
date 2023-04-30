@@ -28,7 +28,6 @@ void	sorting_100(t_mystack *mystack, t_mytools *mytools)
 	vree_stack(mystack, mytools);
 }
 
-
 int	*finder(t_mystack *mystack)
 {
 	int	t;

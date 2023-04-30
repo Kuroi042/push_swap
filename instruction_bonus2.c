@@ -16,8 +16,9 @@ void	r_rotate_a(t_mystack *mystack)
 {
 	int	i;
 	int	rotate;
-	if(mystack->len_a == 0)
-		return;
+
+	if (mystack->len_a == 0)
+		return ;
 	i = mystack->len_a;
 	rotate = mystack->stack_a[mystack->len_a - 1];
 	while (i > 0)
@@ -33,9 +34,8 @@ void	r_rotate_b(t_mystack *mystack)
 	int	i;
 	int	rotate;
 
-	if(mystack->len_b == 0)
-		return;
-		
+	if (mystack->len_b == 0)
+		return ;
 	i = mystack->len_b;
 	rotate = mystack->stack_b[mystack->len_b - 1];
 	while (i > 0)
@@ -50,9 +50,9 @@ void	rotate_b(t_mystack *mystack)
 {
 	int	i;
 	int	bzerow;
-	
-	if(mystack->len_b == 0)
-		return;
+
+	if (mystack->len_b == 0)
+		return ;
 	else if (mystack->stack_b)
 	{
 		i = 0;
@@ -68,22 +68,24 @@ void	rotate_b(t_mystack *mystack)
 
 void	rotate_ab(t_mystack *mystack)
 {
-	if(mystack->len_a == 0 && mystack->len_b == 0)
-		return;
-	else {
-	rotate_a(mystack);
-	rotate_b(mystack);
+	if (mystack->len_a == 0 && mystack->len_b == 0)
+		return ;
+	else
+	{
+		rotate_a(mystack);
+		rotate_b(mystack);
 	}
 }
 
 void	swap_ab(t_mystack *mystack)
 {
-	if(mystack->len_a == 1 || mystack->len_a == 0)
-		return;
+	if (mystack->len_a == 1 || mystack->len_a == 0)
+		return ;
 	else if (mystack->len_b == 0 || mystack->len_b == 1)
-		return;
-	else {
-	swap_a(mystack);
-	swap_b(mystack);
+		return ;
+	else
+	{
+		swap_a(mystack);
+		swap_b(mystack);
 	}
 }

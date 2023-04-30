@@ -69,12 +69,13 @@ void	counter(t_mytools *mytools)
 
 void	r_rotate_ab(t_mystack *mystack)
 {
-	if(mystack->len_a == 1 || mystack->len_a == 0)
-		return;
+	if (mystack->len_a == 1 || mystack->len_a == 0)
+		return ;
 	else if (mystack->len_b == 0 || mystack->len_b == 1)
-		return;
-	else {
-	r_rotate_a(mystack);
-	r_rotate_b(mystack);
+		return ;
+	else
+	{
+		r_rotate_a(mystack);
+		r_rotate_b(mystack);
 	}
 }

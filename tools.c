@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:56:53 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/30 16:55:07 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/30 20:23:13 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,13 +64,14 @@ long	calculate_number(char *str, int sign, t_mytools *mytools,
 
 void	r_rotate_ab(t_mystack *mystack)
 {
-	if(mystack->len_a == 1 || mystack->len_a == 0)
-		return;
+	if (mystack->len_a == 1 || mystack->len_a == 0)
+		return ;
 	else if (mystack->len_b == 0 || mystack->len_b == 1)
-		return;
-	else  {
-	r_rotate_a(mystack);
-	r_rotate_b(mystack);
-	ft_printf("rrr\n");
+		return ;
+	else
+	{
+		r_rotate_a(mystack);
+		r_rotate_b(mystack);
+		ft_printf("rrr\n");
 	}
 }

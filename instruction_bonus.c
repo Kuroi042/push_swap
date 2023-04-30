@@ -18,8 +18,8 @@ void	swap_a(t_mystack *mystack)
 	int	temp;
 
 	i = 0;
-	if (mystack->len_a == 0 )
-		return;
+	if (mystack->len_a == 0)
+		return ;
 	else if (mystack->len_a > 1)
 	{
 		temp = 0;
@@ -36,7 +36,7 @@ void	swap_b(t_mystack *mystack)
 
 	i = 0;
 	if (mystack->len_b == 0 || mystack->len_b == 1)
-		return;
+		return ;
 	else if (mystack->len_b > 1)
 	{
 		temp = 0;
@@ -76,7 +76,7 @@ void	push_b(t_mystack *mystack)
 	int	i;
 
 	if (mystack->len_a == 0)
-		return;
+		return ;
 	if (mystack->stack_a)
 	{
 		mystack->len_b++;
@@ -101,9 +101,8 @@ void	rotate_a(t_mystack *mystack)
 	int	i;
 	int	azero;
 
-	if(mystack->len_a == 1 || mystack->len_a == 0)
-		return;
-	
+	if (mystack->len_a == 1 || mystack->len_a == 0)
+		return ;
 	else if (mystack->stack_a)
 	{
 		i = 0;
