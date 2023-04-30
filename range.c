@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:56:47 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/28 16:07:30 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/30 00:23:52 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	sorting_100(t_mystack *mystack, t_mytools *mytools)
 {
 	int	*s;
 	int	i;
-	int	j;
 
 	i = 0;
 	mystack->temparr = malloc(sizeof(int) * mystack->len);

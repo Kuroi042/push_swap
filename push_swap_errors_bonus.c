@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 21:49:19 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/29 21:53:33 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/30 00:24:47 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int	space_error(char *str)
 	return (1);
 }
 
-void	is_sorted_bonus(t_mystack *mystack, t_mytools *mytools)
+void	is_sorted_bonus(t_mystack *mystack)
 {
 	int	i;
 

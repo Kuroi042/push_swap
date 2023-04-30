@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 20:59:15 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/29 21:38:03 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/30 00:24:56 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int	main(int argc, char *argv[])
 	int			i;
 	t_mytools	*mytools;
 	t_mystack	*mystack;
-	int			nread;
 
 	if (argc > 1)
 	{
@@ -58,15 +57,17 @@ void	while_function(t_mytools *mytools, t_mystack *mystack)
 		else if (nread > 0)
 			compare_str(nread, str, mystack, mytools);
 	}
-	is_sorted_bonus(mystack, mytools);
+	is_sorted_bonus(mystack);
 	if (mystack->is_sorted == 1 && mystack->len_b == 0)
 	{
 		printf("OK\n");
+		free(str);
 		simple_free_bonus(mystack, mytools);
 	}
 	else if (mystack->is_sorted == 0 || mystack->len_b != 0)
 	{
 		printf("KO\n");
+		free(str);
 		simple_free_bonus(mystack, mytools);
 	}
 }

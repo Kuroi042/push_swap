@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 20:18:32 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/29 21:36:14 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/04/30 00:25:07 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void		args_parser(char **argv, t_mytools *mytools, t_mystack *mystack);
 void		counter(t_mytools *mytools);
 void		check_dip_bonus(t_mystack *mystack, t_mytools *mytools);
 int			space_error(char *str);
-void		is_sorted_bonus(t_mystack *mystack, t_mytools *mytools);
+void		is_sorted_bonus(t_mystack *mystack);
 int			ft_atoi_push_bonus(char *str , t_mytools *mytools , t_mystack *mystack);
 void		sign_error(char *str, t_mystack *mystack, t_mytools *mytools);
 long		calculate_number_bonus(char *str, int sign, t_mytools *mytools , t_mystack *mystack);
