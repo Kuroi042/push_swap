@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:56:47 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/30 16:09:12 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/05/01 22:08:36 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,15 @@ void	sorting_100(t_mystack *mystack, t_mytools *mytools)
 	mystack->temparr = malloc(sizeof(int) * mystack->len);
 	ft_memcpy(mystack->temparr, mystack->stack_a, sizeof(int) * mystack->len);
 	simplesorting(mystack, mystack->temparr);
-	s = finder(mystack);
+	s = finder_small_index(mystack);
 	range(mystack, s);
 	free(s);
 	return_b(mystack);
 	vree_stack(mystack, mytools);
 }
 
-int	*finder(t_mystack *mystack)
+//s[0] == small index
+int	*finder_small_index(t_mystack *mystack)
 {
 	int	t;
 	int	j;
@@ -67,7 +68,7 @@ void	range(t_mystack *mystack, int *s)
 		range = 35;
 	while (mystack->len_a)
 	{
-		s = finder(mystack);
+		s = finder_small_index(mystack);
 		if (s[0] < i)
 		{
 			push_b(mystack);

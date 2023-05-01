@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:55:12 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/30 18:22:55 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/05/01 17:22:01 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void		sort_three_two(t_mystack *mystack);
 void		sort_cinq(t_mystack *mystack);
 void		simplesorting(t_mystack *mystack, int *arr);
 void		sorting_100(t_mystack *mystack, t_mytools *mytools);
-int			*finder(t_mystack *mystack);
+int			*finder_small_index(t_mystack *mystack);
 void		range(t_mystack *mystack, int *s);
 int			big_index(t_mystack *mystack);
 int			smal_index(t_mystack *mystack);

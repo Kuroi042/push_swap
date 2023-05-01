@@ -6,12 +6,11 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 20:59:15 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/30 21:05:26 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/05/01 21:51:29 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
-#include <string.h>
 
 int	main(int argc, char *argv[])
 {
@@ -62,13 +61,21 @@ void	while_function(t_mytools *mytools, t_mystack *mystack)
 
 void	compare_str(char *str, t_mystack *mystack, t_mytools *mytools)
 {
-		while (1)
+	while (1)
 	{
-	str = get_next_line(0);
-		if(!str){
-			break;
+		str = get_next_line(0);
+		if (!str)
+		{
+			free(str);
+			break ;
 		}
-	else if (ft_strncmp(str, "sa\n", 3) == 0)
+		compare(str, mystack, mytools);
+	}
+}
+
+void	compare(char *str, t_mystack *mystack, t_mytools *mytools)
+{
+	if (ft_strncmp(str, "sa\n", 3) == 0)
 		swap_a(mystack);
 	else if (ft_strncmp(str, "ra\n", 3) == 0)
 		rotate_a(mystack);
@@ -92,7 +99,4 @@ void	compare_str(char *str, t_mystack *mystack, t_mytools *mytools)
 		swap_b(mystack);
 	else
 		error_medium_bonus(mystack, mytools);
-
 }
-}
-

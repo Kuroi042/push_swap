@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 20:18:32 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/30 18:23:45 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/05/01 19:06:06 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ void		r_rotate_a(t_mystack *mystack);//
 void		r_rotate_b(t_mystack *mystack);//
 void		r_rotate_ab(t_mystack *mystack);
 void 		compare_str( char *str ,t_mystack *mystack , t_mytools *mytools);
+void		compare(char *str,t_mystack *mystack, t_mytools *mytools);
 void		while_function(t_mytools *mytools, t_mystack *mystack);
 
 

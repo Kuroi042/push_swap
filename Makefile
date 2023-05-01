@@ -29,8 +29,8 @@ OBJS_C = ${SRC_PS:.c=.o}
 OBJS_C_BONUS = ${SRC_PS_BONUS:.c=.o}
 
 all: $(NAME)
-$(NAME):  $(OBJS_C)  $(LIBFT) $(LIBFT_SRC) $(FT_PRINTF)  $(FTP_SRC) $(GNL) $(GNL_DIR)
-	@$(CC)  $(CFLAGS) $(OBJS_C) $(LIBFT) $(FT_PRINTF) $(GNL)  -o $(NAME)
+$(NAME):  $(OBJS_C)  $(LIBFT) $(LIBFT_SRC) $(FT_PRINTF)  $(FTP_SRC) 
+	@$(CC)  $(CFLAGS) $(OBJS_C) $(LIBFT) $(FT_PRINTF) -o $(NAME)
 
 bonus : $(MAME)
 $(MAME): $(OBJS_C_BONUS) $(LIBFT) $(LIBFT_SRC)  $(FT_PRINTF) $(FTP_SRC)  $(GNL) $(GNL_DIR)

@@ -6,15 +6,11 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:56:50 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/30 20:22:31 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/05/01 19:17:19 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// If a is greater than b, swap a and b.
-// If a is greater than c, swap a and c.
-// If b is greater than c, swap b and c.
 
 void	sort_two(t_mystack *mystack, t_mytools *mytools)
 {

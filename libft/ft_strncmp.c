@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 02:34:27 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/30 20:10:30 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/05/01 21:50:06 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ int	ft_strncmp(char *s1,  char *s2, size_t n)
 	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
 	{
 		if (s1[i] != s2[i])
-		{
-			
+		{	
 			return (s1[i] - s2[i]);
 		}
 		i++;

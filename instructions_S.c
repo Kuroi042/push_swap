@@ -6,7 +6,7 @@
 /*   By: mbouderr <mbouderr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:55:38 by mbouderr          #+#    #+#             */
-/*   Updated: 2023/04/30 17:50:26 by mbouderr         ###   ########.fr       */
+/*   Updated: 2023/05/01 19:03:08 by mbouderr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ void	push_b(t_mystack *mystack)
 {
 	int	i;
 
+	if (mystack->len_a == 0)
+		return ;
 	if (mystack->stack_a)
 	{
 		mystack->len_b++;
